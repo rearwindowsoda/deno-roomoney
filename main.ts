@@ -5,6 +5,9 @@
 /// <reference lib="deno.ns" />
 
 import { start } from "$fresh/server.ts";
-import manifest from "./fresh.gen.ts";
+import mongoose from "npm:mongoose@^6.7";
+import manifest from "@/fresh.gen.ts";
+import envConfig from "@/utils/config.ts";
 
+await mongoose.connect(envConfig.db_connection_strng);
 await start(manifest);
