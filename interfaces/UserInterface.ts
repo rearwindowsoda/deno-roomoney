@@ -10,7 +10,7 @@ const UserWithoutId = z.object({
 });
 
 const UserWithId = UserWithoutId.extend({
-id: z.instanceof(Types.ObjectId)
+_id: z.instanceof(Types.ObjectId)
 })
 
 export type UserWithoutId = z.infer<typeof UserWithoutId>;
