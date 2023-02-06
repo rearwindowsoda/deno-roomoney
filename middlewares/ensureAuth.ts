@@ -14,7 +14,7 @@ export async function handler(
 ) {
 	if(ctx.state.user)
 	{
-		return ctx.next();
+		return await ctx.next();
 	}else {
 		isLogged.value = false;
 		const message = encodeURIComponent("Unauthorized 😭. You need to log in.")
