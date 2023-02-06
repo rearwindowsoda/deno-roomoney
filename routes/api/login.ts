@@ -4,7 +4,7 @@ import {compare} from "bcrypt";
 import envConfig from "@/utils/config.ts";
 import User from "@/models/User.ts";
 import { Status } from "http";
-import { UserWithId } from "../../interfaces/UserInterface.ts";
+import { UserWithId } from "@/interfaces/UserInterface.ts";
 
 
 export const handler: Handlers = {
@@ -19,7 +19,7 @@ export const handler: Handlers = {
 
 		try {
 			const user: UserWithId | null = await User.findOne({login: username});
-				const comparePasswords = await compare(password as string, user.password);
+				const comparePasswords = await compare(password as string, user!.password);
 				if (!comparePasswords) {
 					return Response.json({message: "Invalid username or password.", status: Status.Unauthorized })
 				}
