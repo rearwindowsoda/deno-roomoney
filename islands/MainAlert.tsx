@@ -13,7 +13,7 @@ function MainAlert(props: MainAlertProps) {
     const alertTimeout = setTimeout(() => {
 			if(alertRef.current) {
 				(alertRef.current as any).style.visibility = "hidden";
-			} // Preact types would work here in current version. 
+			} // Preact types would not work here in current version. 
     }, 3000);
     return () => {
       clearTimeout(alertTimeout);
@@ -21,8 +21,8 @@ function MainAlert(props: MainAlertProps) {
   }, []);
 	return (
 		<>
-		<div ref={alertRef} class={"alert alert-dismissible alert-danger"}>
-  <strong>Oh snap!</strong> <span>{props.message}</span>
+		<div ref={alertRef} class={"alert alert-dismissible alert-info"}>
+  <strong>Message: ✉️</strong> <span>{props.message}</span>
 </div>
 <div></div>
 </>
