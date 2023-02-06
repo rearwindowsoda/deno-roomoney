@@ -20,7 +20,7 @@ const envConfig: ConfigInterface = {
   base_url: Deno.env.get(EnvNames.BASE_URL) || "http://localhost:8000",
   environment: Deno.env.get(EnvNames.DENO_ENV) || "",
 	cookie_secret: Deno.env.get(EnvNames.COOKIE_SECRET) || "",
-	db_connection_strng: Deno.env.get(EnvNames.DB_CONNECTION_STRING) || "mongodb://localhost:27017"
+	db_connection_strng: Deno.env.get(EnvNames.DB_CONNECTION_STRING) || "mongodb://localhost:27017",
 
   
 };

@@ -1,9 +1,10 @@
 import { Handlers } from "$fresh/server.ts";
+import UserWithoutId from "@/interfaces/UserInterface.ts";
 import User from "@/models/User.ts";
+import envConfig from "@/utils/config.ts";
+import { hash } from "bcrypt";
 import { Status } from "http";
 import { ZodError } from "zod";
-import UserWithoutId from "@/interfaces/UserInterface.ts";
-import envConfig from "@/utils/config.ts";
 
 
 export const handler: Handlers = {
@@ -15,7 +16,7 @@ export const handler: Handlers = {
 			if(await User.exists({login: data.login})){
 				return Response.json({message: "Login already exists in our database. Try something else. ", status: Status.UnprocessableEntity})
 				}
-			User.create(data);
+			User.create({...data, password: await hash(data.password)});
 			return Response.redirect(`${envConfig.base_url}?message=${"Account successfully created. You can Log in now."}`)
 			}catch (e){
 				console.error(e);
