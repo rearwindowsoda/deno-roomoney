@@ -6,7 +6,7 @@ const PurchaseSchema = new Schema({
 	purchaseDate: {type: Date.now, required: true},
 	amount: {type: Number, required: true},
 	house: {type: String, required: true, trim: true}
-})
+});
 
 
-export default model("House", PurchaseSchema);
+export default model("Purchase", PurchaseSchema);

@@ -6,6 +6,6 @@ const UserSchema = new Schema({
 	createdAt: {type:Date, default: Date.now, required: false},
 	isAdmin: {type: Boolean, default: false, required: false},
 	houses: [{type: String, required: false}]
-})
+});
 
 export default model("User", UserSchema);

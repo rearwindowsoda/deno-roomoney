@@ -1,7 +1,7 @@
-import { MiddlewareHandlerContext } from "https://deno.land/x/fresh@1.1.2/server.ts";
+import { MiddlewareHandlerContext } from "$fresh/server.ts";
 import * as squishyCookies from 'squishyCookies';
 
-import envConfig from "../utils/config.ts";
+import envConfig from "@/utils/config.ts";
 
 interface State {
 	user: string | 

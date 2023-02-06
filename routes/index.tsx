@@ -2,8 +2,8 @@ import { Handlers } from "$fresh/server.ts";
 import Layout from "@/components/Layout.tsx";
 import Counter from "@/islands/Counter.tsx";
 import { isLogged } from "@/signals/isLogged.tsx";
-import MainAlert from "../islands/MainAlert.tsx";
-import envConfig from "../utils/config.ts";
+import MainAlert from "@/islands/MainAlert.tsx";
+import envConfig from "@/utils/config.ts";
 
 export const handler: Handlers = {
  	GET(req, ctx) {
@@ -35,7 +35,7 @@ export default function Home({data}: {data: HomeParamsInterface}) {
   return (
      <Layout title="Home page test">
 			<>
-			{data.message && <MainAlert message={data.message}/>}
+			{data.message && <MainAlert message={ data.message }/>}
 			<h1>Hello</h1>
         {isLogged.value === true ? <p>You are logged. Go to <a href={envConfig.base_url + "/dashboard"}>dashboard.</a></p> : 'Go ahead and log in'}
 				<p>

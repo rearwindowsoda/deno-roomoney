@@ -1,7 +1,4 @@
-import { MutableRef, useEffect, useRef } from "preact/hooks";
-import { JSX } from "preact";
-
-
+import { useEffect, useRef } from "preact/hooks";
 
 interface MainAlertProps {
 	message: string;
@@ -12,8 +9,8 @@ function MainAlert(props: MainAlertProps) {
 	useEffect(() => {
     const alertTimeout = setTimeout(() => {
 			if(alertRef.current) {
-				(alertRef.current as any).style.visibility = "hidden";
-			} // Preact types would not work here in current version. 
+				(alertRef.current as HTMLDivElement).style.visibility = "hidden";
+			}
     }, 3000);
     return () => {
       clearTimeout(alertTimeout);
@@ -21,7 +18,7 @@ function MainAlert(props: MainAlertProps) {
   }, []);
 	return (
 		<>
-		<div ref={alertRef} class={"alert alert-dismissible alert-info"}>
+		<div ref={ alertRef } class={"alert alert-dismissible alert-info"}>
   <strong>Message: ✉️</strong> <span>{props.message}</span>
 </div>
 <div></div>

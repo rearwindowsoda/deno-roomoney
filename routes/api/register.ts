@@ -12,8 +12,8 @@ export const handler: Handlers = {
     const data = await req.json();
 		if(data){
 			try {
-			await UserWithoutId.parseAsync(data);
-			if(await User.exists({login: data.login})){
+			await UserWithoutId.parseAsync({login: data.login.trim(), password: data.password.trim()});
+			if(await User.exists({login: data.login.trim()})){
 				return Response.json({message: "Login already exists in our database. Try something else. ", status: Status.UnprocessableEntity})
 				}
 			User.create({...data, password: await hash(data.password)});
