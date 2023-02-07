@@ -16,8 +16,7 @@ export const handler: Handlers = {
 		const params = new URLSearchParams(req.url.split("?")[1]);
 		const message = params.get("message");
 		if(message){
-			console.log(message)
-			return ctx.render({
+				return ctx.render({
 				message: params.get("message"),
 			});
 		}

@@ -1,10 +1,13 @@
 import { MiddlewareHandlerContext } from "$fresh/server.ts";
 import * as squishyCookies from 'squishyCookies';
 
+
 import envConfig from "@/utils/config.ts";
+import User from "@/models/User.ts";
+import { UserWithId } from "@/interfaces/UserInterface.ts";
 
 interface State {
-	user: string | 
+	user: UserWithId | 
 	null;
 }
 export async function handler(
@@ -13,10 +16,13 @@ export async function handler(
 ) {
 	try {
 		const cookieVerification = await squishyCookies.verifySignedCookie(req.headers, "auth", envConfig.cookie_secret );
-		console.log(cookieVerification);
-		ctx.state.user = (cookieVerification as string).split('.')[0];
+		const userId = (cookieVerification as string).split('.')[0];
+	 	const findUser =  await User.findOne({_id: userId});
+	 	if(findUser){
+			ctx.state.user = findUser as unknown as UserWithId;
+	 	}
 		} catch {
 			ctx.state.user = null;
-		}
+			}
 		return ctx.next();
 }

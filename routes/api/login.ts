@@ -23,7 +23,7 @@ export const handler: Handlers = {
 				if (!comparePasswords) {
 					return Response.json({message: "Invalid username or password.", status: Status.Unauthorized })
 				}
-				const { cookie } = await squishyCookies.createSignedCookie("auth", user!.login, envConfig.cookie_secret, {
+				const { cookie } = await squishyCookies.createSignedCookie("auth", user!._id.toString(), envConfig.cookie_secret, {
 					maxAge: 1000 * 60 * 60 * 24 * 7,
 					sameSite: "Lax",
 					domain: url.hostname,

@@ -21,7 +21,6 @@ export const handler: Handlers = {
 			}catch (e){
 				console.error(e);
 				const firstError: ZodError = JSON.parse(e)[0].message;
-				console.log(firstError)
 				return Response.json({message: firstError, status: Status.UnprocessableEntity})
 				}
 			}
