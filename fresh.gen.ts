@@ -12,9 +12,16 @@ import * as $5 from "./routes/avatars.tsx";
 import * as $6 from "./routes/dashboard/_middleware.ts";
 import * as $7 from "./routes/dashboard/index.tsx";
 import * as $8 from "./routes/index.tsx";
-import * as $9 from "./routes/name/[name].tsx";
+import * as $9 from "./routes/login/_middleware.ts";
+import * as $10 from "./routes/login/index.tsx";
+import * as $11 from "./routes/name/[name].tsx";
+import * as $12 from "./routes/register/_middleware.ts";
+import * as $13 from "./routes/register/index.tsx";
+import * as $14 from "./routes/register/login/index.tsx";
 import * as $$0 from "./islands/Counter.tsx";
-import * as $$1 from "./islands/MainAlert.tsx";
+import * as $$1 from "./islands/LoginForm.tsx";
+import * as $$2 from "./islands/MainAlert.tsx";
+import * as $$3 from "./islands/RegisterForm.tsx";
 
 const manifest = {
   routes: {
@@ -27,11 +34,18 @@ const manifest = {
     "./routes/dashboard/_middleware.ts": $6,
     "./routes/dashboard/index.tsx": $7,
     "./routes/index.tsx": $8,
-    "./routes/name/[name].tsx": $9,
+    "./routes/login/_middleware.ts": $9,
+    "./routes/login/index.tsx": $10,
+    "./routes/name/[name].tsx": $11,
+    "./routes/register/_middleware.ts": $12,
+    "./routes/register/index.tsx": $13,
+    "./routes/register/login/index.tsx": $14,
   },
   islands: {
     "./islands/Counter.tsx": $$0,
-    "./islands/MainAlert.tsx": $$1,
+    "./islands/LoginForm.tsx": $$1,
+    "./islands/MainAlert.tsx": $$2,
+    "./islands/RegisterForm.tsx": $$3,
   },
   baseUrl: import.meta.url,
   config,
