@@ -17,9 +17,10 @@ This will watch the project directory and restart as necessary.
   - Went with simple cookies :cookie:
 - [x] _Redis / Session Cookies?_
 - [x] Look up config ts from CJ
-- [ ] Work on API routes
-  - [x] Register user and store hashed password in DB
-  - [ ] Login route / Login form as an island
+- [x] Work on API routes
+  - [x] Register user and store hashed password in DB / Register form as an
+        island
+  - [x] Login route / Login form as an island
     - [ ] Create new house (everyone can create a house)
     - [ ] Join house with secret house code (one user can only be in a one
           house)
@@ -30,5 +31,6 @@ This will watch the project directory and restart as necessary.
               purchase
         - [ ] Show all the purchases from a house that user is in
 - [x] Organize Imports (use aliases)
+  - [ ] Add some missing aliases
 - [ ] Dashboard island: _chart_
 - [ ] Deploy to Deno deploy
