@@ -1,12 +1,11 @@
 import Layout from "@/components/Layout.tsx";
-import { userLogin } from "@/signals/isLogged.tsx";
  
  
  export default function Dashboard() {
 	 return (
-			<Layout title="Dashboard">
+			<Layout title="Roomoney - Dashboard">
 			 <>
-			 <h1>Hello { userLogin.value }</h1>
+			 <h1>Hello</h1>
 				 <p>
 					 Dashboard
 				 </p>

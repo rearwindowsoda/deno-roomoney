@@ -3,7 +3,7 @@ import Layout from "@/components/Layout.tsx";
 
 export default function NotFoundPage({ url }: UnknownPageProps) {
 	return(
-	<Layout title="Not found">
+	<Layout title="Roomoney - Not found">
  <p>404 not found: { url.pathname }</p>
 	</Layout>
 	)

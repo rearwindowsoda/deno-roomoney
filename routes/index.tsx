@@ -36,7 +36,7 @@ export default function Home({data}: {data: HomeParamsInterface}) {
 			<>
 			{data.message && <MainAlert message={ data.message }/>}
 			<h1>Hello</h1>
-        {isLogged.value === true ? <p>You are logged. Go to <a href={envConfig.base_url + "/dashboard"}>dashboard.</a></p> : 'Go ahead and log in'}
+        {isLogged.value === true ? <p>You are logged. Go to <a href={envConfig.base_url + "/dashboard"}>dashboard.</a></p> : "Go ahead and log in"}
 				<p>
           Welcome to `fresh`. Try updating this message in the ./routes/index.tsx
           file, and refresh.
