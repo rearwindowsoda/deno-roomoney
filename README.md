@@ -29,7 +29,8 @@ This will watch the project directory and restart as necessary.
         - [ ] Delete house (only the person who created the house can delete it)
         - [ ] Add / remove / _edit_ purchases. Everyone in the hosue can add a
               purchase
-        - [ ] Show all the purchases from a house that user is in
+        - [ ] Show all the purchases from a house that user is in,
+- [ ] Add loaders for forms etc.
 - [x] Organize Imports (use aliases)
   - [ ] Add some missing aliases
 - [ ] Dashboard island: _chart_
