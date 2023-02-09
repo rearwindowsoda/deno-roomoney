@@ -43,6 +43,7 @@ This will watch the project directory and restart as necessary.
       with a standalone register form.
 - [x] Implement a login route with a standalone login form.
 - [x] Log out route.
+- [ ] Add styles and content to _404 page.
 
 :house:
 

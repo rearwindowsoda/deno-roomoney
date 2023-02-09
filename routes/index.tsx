@@ -9,7 +9,6 @@ export const handler: Handlers = {
  	GET(req, ctx) {
 		if(ctx.state.user){
 			isLogged.value = true;
-			console.log(ctx.state.user, isLogged.value)
 		}else {
 			isLogged.value = false;
 		}
