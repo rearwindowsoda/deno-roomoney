@@ -20,7 +20,9 @@ const Layout: FunctionalComponent<LayoutProps> = ({ title, children }) => {
 		<NavBar></NavBar>
 			</header>
 			<main>
+				<div class="container">
 			{ children }
+			</div>
 			</main>
 			<Footer />
     </>

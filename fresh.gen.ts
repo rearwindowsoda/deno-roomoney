@@ -5,19 +5,18 @@
 import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/_404.tsx";
 import * as $1 from "./routes/_middleware.ts";
-import * as $2 from "./routes/api/joke.ts";
-import * as $3 from "./routes/api/login.ts";
-import * as $4 from "./routes/api/register.ts";
-import * as $5 from "./routes/avatars.tsx";
-import * as $6 from "./routes/dashboard/_middleware.ts";
-import * as $7 from "./routes/dashboard/index.tsx";
-import * as $8 from "./routes/index.tsx";
-import * as $9 from "./routes/login/_middleware.ts";
-import * as $10 from "./routes/login/index.tsx";
-import * as $11 from "./routes/name/[name].tsx";
-import * as $12 from "./routes/register/_middleware.ts";
-import * as $13 from "./routes/register/index.tsx";
-import * as $14 from "./routes/register/login/index.tsx";
+import * as $2 from "./routes/api/login.ts";
+import * as $3 from "./routes/api/register.ts";
+import * as $4 from "./routes/avatars.tsx";
+import * as $5 from "./routes/dashboard/_middleware.ts";
+import * as $6 from "./routes/dashboard/index.tsx";
+import * as $7 from "./routes/index.tsx";
+import * as $8 from "./routes/login/_middleware.ts";
+import * as $9 from "./routes/login/index.tsx";
+import * as $10 from "./routes/logout.ts";
+import * as $11 from "./routes/register/_middleware.ts";
+import * as $12 from "./routes/register/index.tsx";
+import * as $13 from "./routes/register/login/index.tsx";
 import * as $$0 from "./islands/Counter.tsx";
 import * as $$1 from "./islands/LoginForm.tsx";
 import * as $$2 from "./islands/MainAlert.tsx";
@@ -27,19 +26,18 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $0,
     "./routes/_middleware.ts": $1,
-    "./routes/api/joke.ts": $2,
-    "./routes/api/login.ts": $3,
-    "./routes/api/register.ts": $4,
-    "./routes/avatars.tsx": $5,
-    "./routes/dashboard/_middleware.ts": $6,
-    "./routes/dashboard/index.tsx": $7,
-    "./routes/index.tsx": $8,
-    "./routes/login/_middleware.ts": $9,
-    "./routes/login/index.tsx": $10,
-    "./routes/name/[name].tsx": $11,
-    "./routes/register/_middleware.ts": $12,
-    "./routes/register/index.tsx": $13,
-    "./routes/register/login/index.tsx": $14,
+    "./routes/api/login.ts": $2,
+    "./routes/api/register.ts": $3,
+    "./routes/avatars.tsx": $4,
+    "./routes/dashboard/_middleware.ts": $5,
+    "./routes/dashboard/index.tsx": $6,
+    "./routes/index.tsx": $7,
+    "./routes/login/_middleware.ts": $8,
+    "./routes/login/index.tsx": $9,
+    "./routes/logout.ts": $10,
+    "./routes/register/_middleware.ts": $11,
+    "./routes/register/index.tsx": $12,
+    "./routes/register/login/index.tsx": $13,
   },
   islands: {
     "./islands/Counter.tsx": $$0,

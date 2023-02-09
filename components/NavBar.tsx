@@ -6,7 +6,7 @@ function NavBar(){
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand navbar-logo" href="/"><img src="images/roomoney_logo.webp" alt="Roomoney App Logo" id="navbar-logo" />Roomoney 💵</a>
-    <div class="collapse navbar-collapse" id="navbarColor01">
+    <div>
       <ul class="navbar-nav me-auto">
 				{isLogged.value === true ? 
 				<>

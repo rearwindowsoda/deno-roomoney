@@ -4,7 +4,7 @@ import LoginForm from "@/islands/LoginForm.tsx";
  
  export default function Login() {
 	 return (
-			<Layout title="Log in to Roomoney">
+			<Layout title="Roomoney 💰 - Sign in">
 			 <>
 			 <div className="container-sm mt-4">
 			 <h1>Sign in</h1>

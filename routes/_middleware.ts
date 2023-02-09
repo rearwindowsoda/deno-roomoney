@@ -20,7 +20,9 @@ export async function handler(
 	 	const findUser =  await User.findOne({_id: userId});
 	 	if(findUser){
 			ctx.state.user = findUser as unknown as UserWithId;
-	 	}
+	 	}else {
+			ctx.state.user = null;
+		}
 		} catch {
 			ctx.state.user = null;
 			}

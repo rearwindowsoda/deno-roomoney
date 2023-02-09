@@ -3,9 +3,9 @@ import Layout from "@/components/Layout.tsx";
  
  export default function Dashboard() {
 	 return (
-			<Layout title="Roomoney - Dashboard">
+			<Layout title="Roomoney 💰 - Dashboard">
 			 <>
-			 <h1>Hello</h1>
+			 <h1>Dashboard</h1>
 				 <p>
 					 Dashboard
 				 </p>

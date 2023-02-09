@@ -32,17 +32,49 @@ interface HomeParamsInterface {
 
 export default function Home({data}: {data: HomeParamsInterface}) {
   return (
-     <Layout title="Home page test">
-			<>
+     <Layout title="Roomoney 💰">
+			<h1 class="mt-4">Roomoney App</h1>
 			{data.message && <MainAlert message={ data.message }/>}
-			<h1>Hello</h1>
-        {isLogged.value === true ? <p>You are logged. Go to <a href={envConfig.base_url + "/dashboard"}>dashboard.</a></p> : "Go ahead and log in"}
+			
+			<div class="d-flex justify-content-center mt-4 gap-4 p-4 flex-wrap">
+				<div class="card border-light mb-3" style="max-width: 20rem;">
+				<div class="card-header">Welcome to Roomoney.</div>
+				<div class="card-body">
+					<h4 class="card-title">Keep track of all the money that goes into your household.</h4>
+					<p class="card-text">Roomoney is a user-friendly app that enables you to create and manage virtual households. Once you've established a household, you can invite fellow resident to join. This way, you can easily keep track of all household purchases and expenditures.</p>
+				</div>
+				</div>
+        {isLogged.value === true ? 	
+				<div class="card border-dark mb-3" style="max-width: 20rem;">
+  				<div class="card-header">You are already logged in.</div>
+  					<div class="card-body">
+    					<h4 class="card-title">Go to the dashboard:</h4>
+    						<p class="card-text"><a href={envConfig.base_url + "/dashboard"} class="btn btn-outline-secondary">Dashboard</a></p>
+  				</div>
+						<div class="card-body">
+    					<h4 class="card-title">Or log out here:</h4>
+    						<p class="card-text"><a href={envConfig.base_url + "/logout"} class="btn btn-outline-primary">Log out</a></p>
+  				</div>
+				</div>
+					: 
+				<div class="card border-dark mb-3" style="max-width: 20rem;">
+  				<div class="card-header">Log in to access all the features of the app.</div>
+  					<div class="card-body">
+    					<h4 class="card-title">If you already have an account:</h4>
+    						<p class="card-text"><a href={envConfig.base_url + "/login"} class="btn btn-outline-secondary">Log in here</a></p>
+  					</div>
+						<div class="card-body">
+							<h4 class="card-title">If you want to create an account:</h4>
+    						<p class="card-text"><a href={envConfig.base_url + "/register"} class="btn btn-outline-info">Sign up here</a></p>
+					</div>
+				</div>
+}
+</div>
+<hr />
+<div class="container-sm mt-4"></div>
 				<p>
-          Welcome to `fresh`. Try updating this message in the ./routes/index.tsx
-          file, and refresh.
+				Roomoney currently restricts the number of residents in one virtual household to two, but this will change in the near future. If you have more roommates, don't worry, you can simply create another virtual household and include them as residents. This way, everyone can keep track of their individual expenses and contribute to the overall financial management of the household.
         </p>
-        <Counter start={3} />
-				</>
 		</Layout>
   );
 }

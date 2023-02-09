@@ -33,7 +33,7 @@ function LoginForm() {
 		<>
 <form data-bitwarden-watching="1" onSubmit={validateForm}>
   <fieldset>
-    <legend>Fill the fields with correct data here:</legend>
+    <legend>Please fill in the fields with accurate information.</legend>
     <div class="form-group">
       <label for="login" class="form-label mt-4">Login:
       <div class="col-sm-10">

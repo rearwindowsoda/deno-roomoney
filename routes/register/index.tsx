@@ -4,7 +4,7 @@ import RegisterForm from "@/islands/RegisterForm.tsx";
  
  export default function Register() {
 	 return (
-			<Layout title="Sign up for Roomoney">
+			<Layout title="Roomoney 💰 - Registration">
 			 <>
 			 <div className="container-sm mt-4">
 			 <h1>Sign Up</h1>
