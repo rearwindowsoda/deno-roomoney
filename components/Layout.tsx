@@ -1,7 +1,7 @@
 import { asset, Head } from "$fresh/runtime.ts";
 import { ComponentChildren, FunctionalComponent } from "preact";
 import NavBar from "@/components/NavBar.tsx";
-import Footer from "./Footer.tsx";
+import Footer from "@/components/Footer.tsx";
 
 interface LayoutProps{
 	title: string;

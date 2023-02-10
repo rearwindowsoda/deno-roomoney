@@ -11,8 +11,8 @@ import * as $4 from "./routes/api/login.ts";
 import * as $5 from "./routes/api/purchases/_middleware.ts";
 import * as $6 from "./routes/api/purchases/house-purchases.ts";
 import * as $7 from "./routes/api/register.ts";
-import * as $8 from "./routes/avatars.tsx";
-import * as $9 from "./routes/dashboard/_middleware.ts";
+import * as $8 from "./routes/dashboard/_middleware.ts";
+import * as $9 from "./routes/dashboard/house/index.tsx";
 import * as $10 from "./routes/dashboard/index.tsx";
 import * as $11 from "./routes/index.tsx";
 import * as $12 from "./routes/login/_middleware.ts";
@@ -36,8 +36,8 @@ const manifest = {
     "./routes/api/purchases/_middleware.ts": $5,
     "./routes/api/purchases/house-purchases.ts": $6,
     "./routes/api/register.ts": $7,
-    "./routes/avatars.tsx": $8,
-    "./routes/dashboard/_middleware.ts": $9,
+    "./routes/dashboard/_middleware.ts": $8,
+    "./routes/dashboard/house/index.tsx": $9,
     "./routes/dashboard/index.tsx": $10,
     "./routes/index.tsx": $11,
     "./routes/login/_middleware.ts": $12,

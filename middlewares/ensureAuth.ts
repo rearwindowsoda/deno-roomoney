@@ -13,6 +13,7 @@ export async function handler(
   ctx: MiddlewareHandlerContext<State>,
 ) {
 	if(ctx.state.user){
+		isLogged.value = true;
 		return await ctx.next();
 	}
 	else {

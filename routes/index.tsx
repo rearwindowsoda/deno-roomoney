@@ -1,8 +1,7 @@
 import { Handlers } from "$fresh/server.ts";
 import Layout from "@/components/Layout.tsx";
-import Counter from "@/islands/Counter.tsx";
-import { isLogged } from "@/signals/isLogged.tsx";
 import MainAlert from "@/islands/MainAlert.tsx";
+import { isLogged } from "@/signals/isLogged.tsx";
 import envConfig from "@/utils/config.ts";
 
 export const handler: Handlers = {

@@ -4,7 +4,7 @@ import * as squishyCookies from 'squishyCookies';
 
 import envConfig from "@/utils/config.ts";
 import User from "@/models/User.ts";
-import { UserWithId } from "@/interfaces/UserInterface.ts";
+import { UserWithIdType as UserWithId } from "@/interfaces/UserInterface.ts";
 
 interface State {
 	user: UserWithId | 
