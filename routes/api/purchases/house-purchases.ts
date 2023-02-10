@@ -1,3 +1,4 @@
+//TODO: Finish that. If there is a house, find all purchases associated to the house. If there are any purchases, send json to the front-end.
 import { Handlers } from "$fresh/server.ts";
 import House from "@/models/House.ts";
 
@@ -17,5 +18,3 @@ export const handler: Handlers = {
 	}
     }
 }
-
-//TODO: Finish that. If there is a house, find all purchases associated to the house. If there are any purchases, send json to the front-end.

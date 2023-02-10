@@ -1,14 +1,38 @@
 import Layout from "@/components/Layout.tsx";
+import { Handlers } from "$fresh/server.ts";
+import House from "@/models/House.ts";
+import { UserWithIdType } from "@/interfaces/UserInterface.ts";
+import { HouseWithIdType } from "@/interfaces/HouseInterface.ts";
+
+export const handler: Handlers = {
+	async GET(req, ctx) {
+		const user = ctx.state.user as UserWithIdType;
+		const house = await House.findOne({owner: user._id});
+		if(house){
+			const {secretCode} = house as unknown as HouseWithIdType;
+			return ctx.render({
+				secretCode
+			})
+		}else{
+			return ctx.render({})
+		}
+ }
+};
  
- 
- export default function House() {
+interface DashboardHousePropsInterFace {
+	secretCode?: string
+}
+
+
+ export default function DashboardHouse({data}: {data: DashboardHousePropsInterFace}) {
 	 return (
 			<Layout title="Roomoney 💰 - House">
-			 <>
+				<>
 			 <h1>Dashboard - 🏚️ Manage Virutal Households</h1>
 				 <p>
 					 You can create, join and manage virutal households here.
 				 </p>
+				 <a href="/dashboard" class="btn btn-outline-light mt-4">Go Back</a>
 				 <div class="d-flex justify-content-center mt-4 gap-4 p-4 flex-wrap">
 				 <div class="card border-primary mb-3" style="max-width: 20rem;">
 				<div class="card-header">Create a virtual household</div>
@@ -50,6 +74,14 @@ import Layout from "@/components/Layout.tsx";
 					</p>
 				</div>
 				</div>
+				{data.secretCode &&
+				<div class="card border-success mb-3" style="max-width: 20rem;">
+					<div class="card-body">
+					<h4 class="card-title">Secret code</h4>
+					<p class="card-text">You are an owner of a virtual household. Here is your secret code: <br /> <strong class="text-success">{data.secretCode}</strong></p>
+				</div>
+				</div>
+				}
 					</div>
 				 </>
 		 </Layout>

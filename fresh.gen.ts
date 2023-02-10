@@ -12,19 +12,20 @@ import * as $5 from "./routes/api/purchases/_middleware.ts";
 import * as $6 from "./routes/api/purchases/house-purchases.ts";
 import * as $7 from "./routes/api/register.ts";
 import * as $8 from "./routes/dashboard/_middleware.ts";
-import * as $9 from "./routes/dashboard/house/index.tsx";
-import * as $10 from "./routes/dashboard/index.tsx";
-import * as $11 from "./routes/index.tsx";
-import * as $12 from "./routes/login/_middleware.ts";
-import * as $13 from "./routes/login/index.tsx";
-import * as $14 from "./routes/logout.ts";
-import * as $15 from "./routes/register/_middleware.ts";
-import * as $16 from "./routes/register/index.tsx";
-import * as $17 from "./routes/register/login/index.tsx";
+import * as $9 from "./routes/dashboard/house/create/index.tsx";
+import * as $10 from "./routes/dashboard/house/index.tsx";
+import * as $11 from "./routes/dashboard/index.tsx";
+import * as $12 from "./routes/index.tsx";
+import * as $13 from "./routes/login/_middleware.ts";
+import * as $14 from "./routes/login/index.tsx";
+import * as $15 from "./routes/logout.ts";
+import * as $16 from "./routes/register/_middleware.ts";
+import * as $17 from "./routes/register/index.tsx";
 import * as $$0 from "./islands/Counter.tsx";
-import * as $$1 from "./islands/LoginForm.tsx";
-import * as $$2 from "./islands/MainAlert.tsx";
-import * as $$3 from "./islands/RegisterForm.tsx";
+import * as $$1 from "./islands/CreateHouseForm.tsx";
+import * as $$2 from "./islands/LoginForm.tsx";
+import * as $$3 from "./islands/MainAlert.tsx";
+import * as $$4 from "./islands/RegisterForm.tsx";
 
 const manifest = {
   routes: {
@@ -37,21 +38,22 @@ const manifest = {
     "./routes/api/purchases/house-purchases.ts": $6,
     "./routes/api/register.ts": $7,
     "./routes/dashboard/_middleware.ts": $8,
-    "./routes/dashboard/house/index.tsx": $9,
-    "./routes/dashboard/index.tsx": $10,
-    "./routes/index.tsx": $11,
-    "./routes/login/_middleware.ts": $12,
-    "./routes/login/index.tsx": $13,
-    "./routes/logout.ts": $14,
-    "./routes/register/_middleware.ts": $15,
-    "./routes/register/index.tsx": $16,
-    "./routes/register/login/index.tsx": $17,
+    "./routes/dashboard/house/create/index.tsx": $9,
+    "./routes/dashboard/house/index.tsx": $10,
+    "./routes/dashboard/index.tsx": $11,
+    "./routes/index.tsx": $12,
+    "./routes/login/_middleware.ts": $13,
+    "./routes/login/index.tsx": $14,
+    "./routes/logout.ts": $15,
+    "./routes/register/_middleware.ts": $16,
+    "./routes/register/index.tsx": $17,
   },
   islands: {
     "./islands/Counter.tsx": $$0,
-    "./islands/LoginForm.tsx": $$1,
-    "./islands/MainAlert.tsx": $$2,
-    "./islands/RegisterForm.tsx": $$3,
+    "./islands/CreateHouseForm.tsx": $$1,
+    "./islands/LoginForm.tsx": $$2,
+    "./islands/MainAlert.tsx": $$3,
+    "./islands/RegisterForm.tsx": $$4,
   },
   baseUrl: import.meta.url,
   config,

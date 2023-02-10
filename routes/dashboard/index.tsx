@@ -7,8 +7,9 @@ import Layout from "@/components/Layout.tsx";
 			 <>
 			 <h1>Dashboard</h1>
 				 <p>
-					 Dashboard
-				 </p><div class="d-flex justify-content-center mt-4 gap-4 p-4 flex-wrap">
+					 You are logged in. Manage your virtual households, purchases from here ✨.
+				 </p>
+				<div class="d-flex justify-content-center mt-4 gap-4 p-4 flex-wrap">
 				<div class="card border-secondary mb-3" style="max-width: 20rem;">
 				<div class="card-header">Purchases</div>
 				<div class="card-body">
