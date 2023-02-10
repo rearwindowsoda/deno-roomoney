@@ -47,9 +47,9 @@ This will watch the project directory and restart as necessary.
 
 :house:
 
-- [ ] Implement Zod validation schemas.
-- [ ] Mongoose Models.
-- [ ] Create new virtual household (everyone can create a virtual household).
+- [x] Implement Zod validation schemas.
+- [x] Mongoose Models.
+- [x] Create new virtual household (everyone can create a virtual household).
 - [ ] Join someone's household as a resident with secret household code (one
       user can join owner in their virtual household).
 - [ ] Leave household (household can have no users. Users can rejoin if they

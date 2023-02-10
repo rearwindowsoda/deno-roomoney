@@ -11,7 +11,7 @@
 		"dotenv": "https://deno.land/std@0.176.0/dotenv/mod.ts",
 		"squishyCookies": "https://deno.land/x/squishy_cookies@v0.2.4/mod.ts",
 		"zod": "https://deno.land/x/zod@v3.16.1/mod.ts",
-		"uuid": "https://deno.land/std@0.176.0/uuid/mod.ts",
+		"uuid": "https://deno.land/std@0.176.0/uuid/v1.ts",
 		"http": "https://deno.land/std@0.153.0/http/http_status.ts",
 		"bcrypt": "https://deno.land/x/bcrypt@v0.4.1/mod.ts"
 	}

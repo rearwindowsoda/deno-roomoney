@@ -12,6 +12,7 @@ const PurchaseWithId = PurchaseWithoutId.extend({
 	_id: z.instanceof(Types.ObjectId)
 })
 
-export type PurchaseWithId = z.infer<typeof PurchaseWithId>;
-export type PurchaseWithoutId = z.infer<typeof PurchaseWithoutId>;
+export type PurchaseWithIdType = z.infer<typeof PurchaseWithId>;
+export type PurchaseWithoutIdType = z.infer<typeof PurchaseWithoutId>;
 
+export default PurchaseWithoutId;

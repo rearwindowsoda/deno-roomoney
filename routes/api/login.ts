@@ -4,8 +4,8 @@ import {compare} from "bcrypt";
 import envConfig from "@/utils/config.ts";
 import User from "@/models/User.ts";
 import { Status } from "http";
-import { UserWithId } from "@/interfaces/UserInterface.ts";
-import { isLogged } from "../../signals/isLogged.tsx";
+import type { UserWithIdType as UserWithId } from "@/interfaces/UserInterface.ts";
+import { isLogged } from "@/signals/isLogged.tsx";
 
 
 export const handler: Handlers = {

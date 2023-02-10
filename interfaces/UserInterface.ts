@@ -13,8 +13,8 @@ const UserWithId = UserWithoutId.extend({
 _id: z.instanceof(Types.ObjectId)
 });
 
-export type UserWithoutId = z.infer<typeof UserWithoutId>;
-export type UserWithId = z.infer<typeof UserWithId>;
+export type UserWithoutIdType = z.infer<typeof UserWithoutId>;
+export type UserWithIdType = z.infer<typeof UserWithId>;
 
 
 export default UserWithoutId;

@@ -18,4 +18,4 @@ export const handler: Handlers = {
     }
 }
 
-//TODO: If there is a house, find all purchases associated to the house. If there are any purchases, send json to the front-end.
+//TODO: Finish that. If there is a house, find all purchases associated to the house. If there are any purchases, send json to the front-end.
