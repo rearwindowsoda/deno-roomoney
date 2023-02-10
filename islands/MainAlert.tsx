@@ -7,7 +7,7 @@ interface MainAlertProps {
 function MainAlert(props: MainAlertProps) {
 	const alertRef = useRef(null);
 	useEffect(() => {
-    const alertTimeout = setTimeout(() => {
+		const alertTimeout = setTimeout(() => {
 			if(alertRef.current) {
 				(alertRef.current as HTMLDivElement).style.visibility = "hidden";
 			}

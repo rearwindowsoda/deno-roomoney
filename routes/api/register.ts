@@ -17,11 +17,10 @@ export const handler: Handlers = {
 				return Response.json({message: "Login already exists in our database. Try something else. ", status: Status.UnprocessableEntity})
 				}
 			User.create({...data, password: await hash(data.password)});
-			return Response.redirect(`${envConfig.base_url}?message=${"Account successfully created. You can Log in now."}`)
+			return Response.json({location: `${envConfig.base_url}?message=${"Account successfully created 👨‍👨‍👧. You can log in now."}`, status: Status.Created})
 			}catch (e){
 				console.error(e);
 				const firstError: ZodError = JSON.parse(e)[0].message;
-				console.log(firstError)
 				return Response.json({message: firstError, status: Status.UnprocessableEntity})
 				}
 			}

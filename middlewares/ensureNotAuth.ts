@@ -12,13 +12,13 @@ export async function handler(
   _req: Request,
   ctx: MiddlewareHandlerContext<State>,
 ) {
-	if(ctx.state.user){
-		isLogged.value = true;
+	if(!ctx.state.user){
+		isLogged.value = false;
 		return await ctx.next();
 	}
 	else {
-		isLogged.value = false;
-		const message = encodeURIComponent("Unauthorized 😭. You need to log in.")
+		isLogged.value = true;
+		const message = encodeURIComponent("You are already logged in 💛. No need to do it again.")
 		return Response.redirect(`${envConfig.base_url}?message=${message}`);
 	}
 }
