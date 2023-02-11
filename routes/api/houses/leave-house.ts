@@ -1,0 +1,1 @@
+// TODO: Finish that. If user is not an owner of the house they are in, he can leave the house. After leaving the house, you delete him from the houses user table, delete the house in their array. If they are the owner, they can only delete the house and not leave it.

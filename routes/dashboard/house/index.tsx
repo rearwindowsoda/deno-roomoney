@@ -19,12 +19,12 @@ export const handler: Handlers = {
  }
 };
  
-interface DashboardHousePropsInterFace {
+interface DashboardHousePropsInterface {
 	secretCode?: string
 }
 
 
- export default function DashboardHouse({data}: {data: DashboardHousePropsInterFace}) {
+ export default function DashboardHouse({data}: {data: DashboardHousePropsInterface}) {
 	 return (
 			<Layout title="Roomoney 💰 - House">
 				<>

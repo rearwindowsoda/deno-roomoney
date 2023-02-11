@@ -8,26 +8,29 @@ import * as $1 from "./routes/_middleware.ts";
 import * as $2 from "./routes/api/houses/_middleware.ts";
 import * as $3 from "./routes/api/houses/create-house.ts";
 import * as $4 from "./routes/api/houses/join-house.ts";
-import * as $5 from "./routes/api/login.ts";
-import * as $6 from "./routes/api/purchases/_middleware.ts";
-import * as $7 from "./routes/api/purchases/house-purchases.ts";
-import * as $8 from "./routes/api/register.ts";
-import * as $9 from "./routes/dashboard/_middleware.ts";
-import * as $10 from "./routes/dashboard/house/create/index.tsx";
-import * as $11 from "./routes/dashboard/house/index.tsx";
-import * as $12 from "./routes/dashboard/house/join/index.tsx";
-import * as $13 from "./routes/dashboard/index.tsx";
-import * as $14 from "./routes/index.tsx";
-import * as $15 from "./routes/login/_middleware.ts";
-import * as $16 from "./routes/login/index.tsx";
-import * as $17 from "./routes/logout.ts";
-import * as $18 from "./routes/register/_middleware.ts";
-import * as $19 from "./routes/register/index.tsx";
+import * as $5 from "./routes/api/houses/leave-house.ts";
+import * as $6 from "./routes/api/login.ts";
+import * as $7 from "./routes/api/purchases/_middleware.ts";
+import * as $8 from "./routes/api/purchases/house-purchases.ts";
+import * as $9 from "./routes/api/register.ts";
+import * as $10 from "./routes/dashboard/_middleware.ts";
+import * as $11 from "./routes/dashboard/house/create/index.tsx";
+import * as $12 from "./routes/dashboard/house/index.tsx";
+import * as $13 from "./routes/dashboard/house/join/index.tsx";
+import * as $14 from "./routes/dashboard/house/leave/index.tsx";
+import * as $15 from "./routes/dashboard/index.tsx";
+import * as $16 from "./routes/index.tsx";
+import * as $17 from "./routes/login/_middleware.ts";
+import * as $18 from "./routes/login/index.tsx";
+import * as $19 from "./routes/logout.ts";
+import * as $20 from "./routes/register/_middleware.ts";
+import * as $21 from "./routes/register/index.tsx";
 import * as $$0 from "./islands/CreateHouseForm.tsx";
 import * as $$1 from "./islands/JoinHouseForm.tsx";
-import * as $$2 from "./islands/LoginForm.tsx";
-import * as $$3 from "./islands/MainAlert.tsx";
-import * as $$4 from "./islands/RegisterForm.tsx";
+import * as $$2 from "./islands/LeaveHouseForm.tsx";
+import * as $$3 from "./islands/LoginForm.tsx";
+import * as $$4 from "./islands/MainAlert.tsx";
+import * as $$5 from "./islands/RegisterForm.tsx";
 
 const manifest = {
   routes: {
@@ -36,28 +39,31 @@ const manifest = {
     "./routes/api/houses/_middleware.ts": $2,
     "./routes/api/houses/create-house.ts": $3,
     "./routes/api/houses/join-house.ts": $4,
-    "./routes/api/login.ts": $5,
-    "./routes/api/purchases/_middleware.ts": $6,
-    "./routes/api/purchases/house-purchases.ts": $7,
-    "./routes/api/register.ts": $8,
-    "./routes/dashboard/_middleware.ts": $9,
-    "./routes/dashboard/house/create/index.tsx": $10,
-    "./routes/dashboard/house/index.tsx": $11,
-    "./routes/dashboard/house/join/index.tsx": $12,
-    "./routes/dashboard/index.tsx": $13,
-    "./routes/index.tsx": $14,
-    "./routes/login/_middleware.ts": $15,
-    "./routes/login/index.tsx": $16,
-    "./routes/logout.ts": $17,
-    "./routes/register/_middleware.ts": $18,
-    "./routes/register/index.tsx": $19,
+    "./routes/api/houses/leave-house.ts": $5,
+    "./routes/api/login.ts": $6,
+    "./routes/api/purchases/_middleware.ts": $7,
+    "./routes/api/purchases/house-purchases.ts": $8,
+    "./routes/api/register.ts": $9,
+    "./routes/dashboard/_middleware.ts": $10,
+    "./routes/dashboard/house/create/index.tsx": $11,
+    "./routes/dashboard/house/index.tsx": $12,
+    "./routes/dashboard/house/join/index.tsx": $13,
+    "./routes/dashboard/house/leave/index.tsx": $14,
+    "./routes/dashboard/index.tsx": $15,
+    "./routes/index.tsx": $16,
+    "./routes/login/_middleware.ts": $17,
+    "./routes/login/index.tsx": $18,
+    "./routes/logout.ts": $19,
+    "./routes/register/_middleware.ts": $20,
+    "./routes/register/index.tsx": $21,
   },
   islands: {
     "./islands/CreateHouseForm.tsx": $$0,
     "./islands/JoinHouseForm.tsx": $$1,
-    "./islands/LoginForm.tsx": $$2,
-    "./islands/MainAlert.tsx": $$3,
-    "./islands/RegisterForm.tsx": $$4,
+    "./islands/LeaveHouseForm.tsx": $$2,
+    "./islands/LoginForm.tsx": $$3,
+    "./islands/MainAlert.tsx": $$4,
+    "./islands/RegisterForm.tsx": $$5,
   },
   baseUrl: import.meta.url,
   config,
