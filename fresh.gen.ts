@@ -7,20 +7,21 @@ import * as $0 from "./routes/_404.tsx";
 import * as $1 from "./routes/_middleware.ts";
 import * as $2 from "./routes/api/houses/_middleware.ts";
 import * as $3 from "./routes/api/houses/create-house.ts";
-import * as $4 from "./routes/api/login.ts";
-import * as $5 from "./routes/api/purchases/_middleware.ts";
-import * as $6 from "./routes/api/purchases/house-purchases.ts";
-import * as $7 from "./routes/api/register.ts";
-import * as $8 from "./routes/dashboard/_middleware.ts";
-import * as $9 from "./routes/dashboard/house/create/index.tsx";
-import * as $10 from "./routes/dashboard/house/index.tsx";
-import * as $11 from "./routes/dashboard/index.tsx";
-import * as $12 from "./routes/index.tsx";
-import * as $13 from "./routes/login/_middleware.ts";
-import * as $14 from "./routes/login/index.tsx";
-import * as $15 from "./routes/logout.ts";
-import * as $16 from "./routes/register/_middleware.ts";
-import * as $17 from "./routes/register/index.tsx";
+import * as $4 from "./routes/api/houses/join-house.ts";
+import * as $5 from "./routes/api/login.ts";
+import * as $6 from "./routes/api/purchases/_middleware.ts";
+import * as $7 from "./routes/api/purchases/house-purchases.ts";
+import * as $8 from "./routes/api/register.ts";
+import * as $9 from "./routes/dashboard/_middleware.ts";
+import * as $10 from "./routes/dashboard/house/create/index.tsx";
+import * as $11 from "./routes/dashboard/house/index.tsx";
+import * as $12 from "./routes/dashboard/index.tsx";
+import * as $13 from "./routes/index.tsx";
+import * as $14 from "./routes/login/_middleware.ts";
+import * as $15 from "./routes/login/index.tsx";
+import * as $16 from "./routes/logout.ts";
+import * as $17 from "./routes/register/_middleware.ts";
+import * as $18 from "./routes/register/index.tsx";
 import * as $$0 from "./islands/Counter.tsx";
 import * as $$1 from "./islands/CreateHouseForm.tsx";
 import * as $$2 from "./islands/LoginForm.tsx";
@@ -33,20 +34,21 @@ const manifest = {
     "./routes/_middleware.ts": $1,
     "./routes/api/houses/_middleware.ts": $2,
     "./routes/api/houses/create-house.ts": $3,
-    "./routes/api/login.ts": $4,
-    "./routes/api/purchases/_middleware.ts": $5,
-    "./routes/api/purchases/house-purchases.ts": $6,
-    "./routes/api/register.ts": $7,
-    "./routes/dashboard/_middleware.ts": $8,
-    "./routes/dashboard/house/create/index.tsx": $9,
-    "./routes/dashboard/house/index.tsx": $10,
-    "./routes/dashboard/index.tsx": $11,
-    "./routes/index.tsx": $12,
-    "./routes/login/_middleware.ts": $13,
-    "./routes/login/index.tsx": $14,
-    "./routes/logout.ts": $15,
-    "./routes/register/_middleware.ts": $16,
-    "./routes/register/index.tsx": $17,
+    "./routes/api/houses/join-house.ts": $4,
+    "./routes/api/login.ts": $5,
+    "./routes/api/purchases/_middleware.ts": $6,
+    "./routes/api/purchases/house-purchases.ts": $7,
+    "./routes/api/register.ts": $8,
+    "./routes/dashboard/_middleware.ts": $9,
+    "./routes/dashboard/house/create/index.tsx": $10,
+    "./routes/dashboard/house/index.tsx": $11,
+    "./routes/dashboard/index.tsx": $12,
+    "./routes/index.tsx": $13,
+    "./routes/login/_middleware.ts": $14,
+    "./routes/login/index.tsx": $15,
+    "./routes/logout.ts": $16,
+    "./routes/register/_middleware.ts": $17,
+    "./routes/register/index.tsx": $18,
   },
   islands: {
     "./islands/Counter.tsx": $$0,

@@ -15,17 +15,26 @@ export const handler: Handlers = {
 		const username: string | undefined = data.login;
 		const password: string | undefined = data.password;
 		if(!username || !password) {
-			return Response.json({message: "You cannot log in without username or password. Both are required.", status: Status.Unauthorized });
+			return new Response(
+				JSON.stringify({message: "You cannot log in without username or password. Both are required.", status: Status.Unauthorized}), 
+				{headers: 
+					{"Content-Type": "application/json}"}, status: Status.Unauthorized});
 		}
 
 		try {
 			const user: UserWithId | null = await User.findOne({login: username});
 			if(!user){
-				return Response.json({message: "Invalid username or password.", status: Status.Unauthorized });
+				return new Response(
+					JSON.stringify({message: "Invalid username or password.", status: Status.Unauthorized}), 
+					{headers: 
+						{"Content-Type": "application/json}"}, status: Status.Unauthorized});
 			}
 				const comparePasswords = await compare(password, user!.password);
 				if (!comparePasswords) {
-					return Response.json({message: "Invalid username or password.", status: Status.Unauthorized })
+					return new Response(
+						JSON.stringify({message: "Invalid username or password.", status: Status.Unauthorized}), 
+						{headers: 
+							{"Content-Type": "application/json}"}, status: Status.Unauthorized});
 				}
 				const { cookie } = await squishyCookies.createSignedCookie("auth", user!._id.toString(), envConfig.cookie_secret, {
 					maxAge: 1000 * 60 * 60,
@@ -36,15 +45,17 @@ export const handler: Handlers = {
 					secure: envConfig.environment === "production"
 				});
 				isLogged.value = true;
-			return Response.json({logged: true, location: envConfig.base_url + "/dashboard", status: Status.Accepted
-		}, {
-				headers: {	
-				"set-cookie": cookie}
-			})
+				return new Response(
+					JSON.stringify({logged: true, status: Status.Accepted, location: envConfig.base_url + "/dashboard"}), 
+					{headers: 
+						{"Content-Type": "application/json}", "set-cookie": `${cookie}`}, status: Status.Accepted});
 		}
 			catch (error) {
 				console.error(error);
-				return Response.json({message: "Something went wrong. Try again later.", status: Status.InternalServerError })
+				return new Response(
+					JSON.stringify({message: "Something went wrong. Try again later.", status: Status.InternalServerError}), 
+					{headers: 
+						{"Content-Type": "application/json}"}, status: Status.InternalServerError});
 		}
 }
 }
