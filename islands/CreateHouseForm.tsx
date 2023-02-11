@@ -1,8 +1,5 @@
-import { useState } from "preact/hooks"
+import { useState } from "preact/hooks";
 import { JSX } from "preact/jsx-runtime";
-import envConfig from "@/utils/config.ts";
-//TODO: Handler. Show user login and show if they are currently in a house.
-//TODO: Fetch api to create a house. API Route ready.
 
 function CreateHouseForm() {
 	const [message, setMessage] = useState<string>("");
