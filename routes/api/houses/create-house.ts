@@ -16,7 +16,7 @@ export const handler: Handlers = {
 		
 		const user = (ctx.state.user as unknown as UserWithIdType);
 		
-		if(user.houses.length > 0){
+		if(user.houses.length){
 			return new Response(
 				JSON.stringify({message: "You already joined a house. You can leave current virtual household and then create a new one or join someone's virtual house with a secret code.", status: Status.NotAcceptable}), 
 				{headers: 

@@ -11,7 +11,8 @@ export const handler: Handlers = {
     const data = await req.json();
 		if(data.secretCode){
 			try {
-				const foundHouse= await House.findOne({secretCode: data.SecretCode}) as unknown as HouseWithIdType;
+				const foundHouse= await House.findOne({secretCode: data.secretCode}) as unknown as HouseWithIdType;
+				console.log(foundHouse)
 				const foundUser = ctx.state.user as unknown as UserWithIdType;
 				if(!foundHouse){
 					return new Response(
@@ -19,13 +20,24 @@ export const handler: Handlers = {
 						{headers: 
 							{"Content-Type": "application/json}"}, status: Status.UnprocessableEntity});
 				}
-			 if(foundUser.houses.length){
+			 if(foundUser._id === foundHouse.owner){
+				return new Response(
+					JSON.stringify({message: "You cannot join your own house again.", status: Status.Forbidden}), 
+					{headers: 
+						{"Content-Type": "application/json}"}, status: Status.Forbidden});
+			}else if(foundUser.houses.length){
 				return new Response(
 					JSON.stringify({message: "You already joined a house. Leave current household before joining another one.", status: Status.Forbidden}), 
 					{headers: 
 						{"Content-Type": "application/json}"}, status: Status.Forbidden});
+			}else if(foundHouse.users.length >= 2){
+				return new Response(
+					JSON.stringify({message: "House is already full.", status: Status.Forbidden}), 
+					{headers: 
+						{"Content-Type": "application/json}"}, status: Status.Forbidden});
 			}
 			await User.updateOne({_id: foundUser._id}, {$push: {houses: foundHouse._id}});
+			await House.updateOne({secretCode: foundHouse.secretCode}, {$push: {users: foundUser._id}})
 			return new Response(
 				JSON.stringify({location: `${envConfig.base_url}?message=${"You joined the household. 🏡. Go to the dashboard and add purchases."}`, status: Status.Created}), 
 				{headers: 
