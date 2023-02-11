@@ -12,7 +12,6 @@ export const handler: Handlers = {
 		if(data.secretCode){
 			try {
 				const foundHouse= await House.findOne({secretCode: data.secretCode}) as unknown as HouseWithIdType;
-				console.log(foundHouse)
 				const foundUser = ctx.state.user as unknown as UserWithIdType;
 				if(!foundHouse){
 					return new Response(
@@ -20,7 +19,7 @@ export const handler: Handlers = {
 						{headers: 
 							{"Content-Type": "application/json}"}, status: Status.UnprocessableEntity});
 				}
-			 if(foundUser._id === foundHouse.owner){
+			 if(foundUser._id.equals(foundHouse.owner)){
 				return new Response(
 					JSON.stringify({message: "You cannot join your own house again.", status: Status.Forbidden}), 
 					{headers: 

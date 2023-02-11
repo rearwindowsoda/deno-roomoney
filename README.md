@@ -52,7 +52,7 @@ This will watch the project directory and restart as necessary.
 - [x] Create new virtual household (everyone can create a virtual household).
 - [x] Join someone's household as a resident with secret household code (one
       user can join owner in their virtual household).
-- [ ] Leave household (household can have no users. Users can rejoin if they
+- [x] Leave household (household can have no users. Users can rejoin if they
       have a secret code).
 - [ ] Delete household (only the person who created the household can delete
       it).

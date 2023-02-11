@@ -2,7 +2,7 @@ import { useState } from "preact/hooks";
 import { JSX } from "preact/jsx-runtime";
 import { UserWithIdType } from "@/interfaces/UserInterface.ts";
 
-function LeaveHouseForm (props: {user: UserWithIdType}) {
+function LeaveHouseForm () {
 	const [message, setMessage] = useState<string>("");
 function goBack(event: JSX.TargetedEvent) {
 	event.preventDefault();
@@ -12,14 +12,14 @@ function goBack(event: JSX.TargetedEvent) {
 async function validateForm(event: JSX.TargetedEvent){
 	event.preventDefault();
 	try {
-		const joinHouseRequest = await fetch("/api/houses/leave-house", {
+		const leaveHouseRequest = await fetch("/api/houses/leave-house", {
 			method: "DELETE",
 			headers: {
 				"content-type": "application/json"
 			},
-			body: JSON.stringify(props.user._id)
+			body: JSON.stringify({})
 		});
-		const response = await joinHouseRequest.json();
+		const response = await leaveHouseRequest.json();
 		if(response.message){
 			setMessage(response.message);
 		}else if(response.location){
