@@ -22,11 +22,10 @@ import * as $15 from "./routes/login/index.tsx";
 import * as $16 from "./routes/logout.ts";
 import * as $17 from "./routes/register/_middleware.ts";
 import * as $18 from "./routes/register/index.tsx";
-import * as $$0 from "./islands/Counter.tsx";
-import * as $$1 from "./islands/CreateHouseForm.tsx";
-import * as $$2 from "./islands/LoginForm.tsx";
-import * as $$3 from "./islands/MainAlert.tsx";
-import * as $$4 from "./islands/RegisterForm.tsx";
+import * as $$0 from "./islands/CreateHouseForm.tsx";
+import * as $$1 from "./islands/LoginForm.tsx";
+import * as $$2 from "./islands/MainAlert.tsx";
+import * as $$3 from "./islands/RegisterForm.tsx";
 
 const manifest = {
   routes: {
@@ -51,11 +50,10 @@ const manifest = {
     "./routes/register/index.tsx": $18,
   },
   islands: {
-    "./islands/Counter.tsx": $$0,
-    "./islands/CreateHouseForm.tsx": $$1,
-    "./islands/LoginForm.tsx": $$2,
-    "./islands/MainAlert.tsx": $$3,
-    "./islands/RegisterForm.tsx": $$4,
+    "./islands/CreateHouseForm.tsx": $$0,
+    "./islands/LoginForm.tsx": $$1,
+    "./islands/MainAlert.tsx": $$2,
+    "./islands/RegisterForm.tsx": $$3,
   },
   baseUrl: import.meta.url,
   config,

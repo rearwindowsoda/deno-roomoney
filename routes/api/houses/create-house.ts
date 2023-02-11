@@ -8,6 +8,7 @@ import type { HouseWithIdType, HouseWithoutIdType } from "@/interfaces/HouseInte
 import type { UserWithIdType } from "@/interfaces/UserInterface.ts";
 import House from "@/models/House.ts";
 import User from "@/models/User.ts";
+import envConfig from "@/utils/config.ts";
 
 
 export const handler: Handlers = {
@@ -47,7 +48,7 @@ export const handler: Handlers = {
 			const savedHouse = await House.create(data) as unknown as HouseWithIdType;
 			await User.updateOne({_id: user._id}, {$push: {houses: savedHouse._id}}, {new: true});
 			return new Response(
-				JSON.stringify({message: "Virtual household created.", status: Status.Created}), 
+				JSON.stringify({location: `${envConfig.base_url}?message=${"Virtual household created 🏡. You can manage it from the dashboard."}`, status: Status.Created}), 
 				{headers: 
 					{"Content-Type": "application/json}"}, status: Status.Created});
 			}
