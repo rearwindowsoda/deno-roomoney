@@ -50,11 +50,11 @@ This will watch the project directory and restart as necessary.
 - [x] Implement Zod validation schemas.
 - [x] Mongoose Models.
 - [x] Create new virtual household (everyone can create a virtual household).
-- [ ] Join someone's household as a resident with secret household code (one
+- [x] Join someone's household as a resident with secret household code (one
       user can join owner in their virtual household).
-- [ ] Leave household (household can have no users. Users can rejoin if they
+- [x] Leave household (household can have no users. Users can rejoin if they
       have a secret code).
-- [ ] Delete household (only the person who created the household can delete
+- [x] Delete household (only the person who created the household can delete
       it).
 
 :euro:

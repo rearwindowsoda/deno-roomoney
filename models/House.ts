@@ -6,7 +6,7 @@ const HouseSchema = new Schema({
 	name: {type: String, required: true, trim: true, unique: true},
 	users: [{type: Types.ObjectId, required: false}],
 	secretCode: {type: String, required: true, trim: true},
-	owner: {type: String, required: true, trim: true}
+	owner: {type: Types.ObjectId, required: true, trim: true}
 });
 
 

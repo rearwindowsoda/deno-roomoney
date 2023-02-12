@@ -1,6 +1,5 @@
-import { useState } from "preact/hooks"
+import { useState } from "preact/hooks";
 import { JSX } from "preact/jsx-runtime";
-import envConfig from "@/utils/config.ts";
 
 
 function LoginForm() {
@@ -37,7 +36,7 @@ function LoginForm() {
     <div class="form-group">
       <label for="login" class="form-label mt-4">Login:
       <div class="col-sm-10">
-        <input type="text" readonly={false} class="form-control" id="login" defaultValue="" placeholder="your-login" onInput={e => setCredentials({...credentials, login: e.currentTarget.value})} onFocus={() => setErrorMessage("")} required></input>
+        <input type="text" minLength={5} maxLength={20} readonly={false} class="form-control" id="login" defaultValue="" placeholder="your-login" onInput={e => setCredentials({...credentials, login: e.currentTarget.value})} onFocus={() => setErrorMessage("")} required></input>
 				<small class="form-text text-muted">Type your user login here.</small>
       </div>
 			</label>
@@ -45,7 +44,7 @@ function LoginForm() {
 		<div class="form-group">
       <label for="password" class="form-label mt-4">Password:
       <div class="col-sm-10">
-        <input type="password" readonly={false} class="form-control" id="password" placeholder="your-password" onInput={e => setCredentials({...credentials, password: e.currentTarget.value})} onFocus={() => setErrorMessage("")} required/>
+        <input type="password" minLength={5} maxLength={20} readonly={false} class="form-control" id="password" placeholder="your-password" onInput={e => setCredentials({...credentials, password: e.currentTarget.value})} onFocus={() => setErrorMessage("")} required/>
 				<small class="form-text text-muted">Type your user password here.</small>
       </div>
 			</label>
