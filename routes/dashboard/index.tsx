@@ -15,7 +15,7 @@ import Layout from "@/components/Layout.tsx";
 				<div class="card-body">
 					<h4 class="card-title">See, add, edit, remove purchases in your household.</h4>
 					<p class="card-text">
-						<a href="/dashboard/purchases" class="btn btn-info">🛒 Go to purchases</a>
+						<a href="/dashboard/purchase" class="btn btn-info">🛒 Go to purchases</a>
 					</p>
 				</div>
 				</div>

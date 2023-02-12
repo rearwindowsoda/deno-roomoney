@@ -88,7 +88,7 @@ For deployment / production check out [Deno Deploy](https://deno.com/deploy).
 
 :truck:
 
-- [ ] Implement API routes,
+- [ ] Implement API routes.
 
 :man:
 
@@ -116,7 +116,7 @@ For deployment / production check out [Deno Deploy](https://deno.com/deploy).
 
 - [ ] Implement Zod validation schemas.
 - [ ] Mongoose Models.
-- [ ] Add, remove, and edit purchases. Everyone in the hosue can add a purchase.
+- [ ] Add, remove, and edit purchases. Everyone in the house can add a purchase.
       Purchase can be edited only by a person who paid for it.
 - [ ] Show all the purchases from a household that user is a resident of.
 - [ ] Show the amount of all purchases.

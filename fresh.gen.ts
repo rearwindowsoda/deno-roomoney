@@ -21,12 +21,13 @@ import * as $14 from "./routes/dashboard/house/index.tsx";
 import * as $15 from "./routes/dashboard/house/join/index.tsx";
 import * as $16 from "./routes/dashboard/house/leave/index.tsx";
 import * as $17 from "./routes/dashboard/index.tsx";
-import * as $18 from "./routes/index.tsx";
-import * as $19 from "./routes/login/_middleware.ts";
-import * as $20 from "./routes/login/index.tsx";
-import * as $21 from "./routes/logout.ts";
-import * as $22 from "./routes/register/_middleware.ts";
-import * as $23 from "./routes/register/index.tsx";
+import * as $18 from "./routes/dashboard/purchase/index.tsx";
+import * as $19 from "./routes/index.tsx";
+import * as $20 from "./routes/login/_middleware.ts";
+import * as $21 from "./routes/login/index.tsx";
+import * as $22 from "./routes/logout.ts";
+import * as $23 from "./routes/register/_middleware.ts";
+import * as $24 from "./routes/register/index.tsx";
 import * as $$0 from "./islands/CreateHouseForm.tsx";
 import * as $$1 from "./islands/DeleteHouseForm.tsx";
 import * as $$2 from "./islands/JoinHouseForm.tsx";
@@ -55,12 +56,13 @@ const manifest = {
     "./routes/dashboard/house/join/index.tsx": $15,
     "./routes/dashboard/house/leave/index.tsx": $16,
     "./routes/dashboard/index.tsx": $17,
-    "./routes/index.tsx": $18,
-    "./routes/login/_middleware.ts": $19,
-    "./routes/login/index.tsx": $20,
-    "./routes/logout.ts": $21,
-    "./routes/register/_middleware.ts": $22,
-    "./routes/register/index.tsx": $23,
+    "./routes/dashboard/purchase/index.tsx": $18,
+    "./routes/index.tsx": $19,
+    "./routes/login/_middleware.ts": $20,
+    "./routes/login/index.tsx": $21,
+    "./routes/logout.ts": $22,
+    "./routes/register/_middleware.ts": $23,
+    "./routes/register/index.tsx": $24,
   },
   islands: {
     "./islands/CreateHouseForm.tsx": $$0,
