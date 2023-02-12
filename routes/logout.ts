@@ -10,7 +10,9 @@ export const handler: Handlers = {
         Location: config.base_url,
       },
     });
-    denoCookie.deleteCookie(response.headers, "auth", {path: `${config.base_url}`});
+    denoCookie.deleteCookie(response.headers, "auth", {
+      path: `${config.base_url}`,
+    });
     return response;
   },
 };
