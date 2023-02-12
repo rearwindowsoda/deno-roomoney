@@ -1,1 +1,1 @@
-export {handler} from "@/middlewares/ensureNotAuth.ts";
+export { handler } from "@/middlewares/ensureNotAuth.ts";
