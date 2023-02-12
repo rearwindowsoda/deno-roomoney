@@ -1,7 +1,7 @@
 import { useState } from "preact/hooks";
 import { JSX } from "preact/jsx-runtime";
 
-function LeaveHouseForm () {
+function DeleteHouseForm () {
 	const [message, setMessage] = useState<string>("");
 function goBack(event: JSX.TargetedEvent) {
 	event.preventDefault();
@@ -11,8 +11,8 @@ function goBack(event: JSX.TargetedEvent) {
 async function validateForm(event: JSX.TargetedEvent){
 	event.preventDefault();
 	try {
-		const leaveHouseRequest = await fetch("/api/houses/leave-house", {
-			method: "PATCH",
+		const leaveHouseRequest = await fetch("/api/houses/delete-house", {
+			method: "DELETE",
 			headers: {
 				"content-type": "application/json"
 			},
@@ -33,10 +33,10 @@ async function validateForm(event: JSX.TargetedEvent){
 	return(
 		<>
 		<div class="d-flex justify-content-center mt-4 gap-4 p-4 flex-column">
-		<h2 class="text-danger">Do you want to leave your current virtual household?</h2>
+		<h2 class="text-danger">Do you want to <strong>delete</strong> your current virtual household? You cannot reverse this operation 😨!</h2>
 	
 		<button class="btn btn-info" type="submit" onClick={goBack}>No!</button>
-		<button class="btn btn-warning" type="submit" onClick={validateForm}>Yes!</button>
+		<button class="btn btn-danger" type="submit" onClick={validateForm}>Yes!</button>
 		{message &&
 <div class="alert mt-4 alert-secondary">
   <strong>Oops 😢! </strong> 
@@ -48,4 +48,4 @@ async function validateForm(event: JSX.TargetedEvent){
 	)
 }
 
-export default LeaveHouseForm;
+export default DeleteHouseForm;

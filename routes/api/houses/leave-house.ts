@@ -1,5 +1,3 @@
-// TODO: Finish that. If user is not an owner of the house they are in, he can leave the house. After leaving the house, you delete him from the houses user table, delete the house in their array. If they are the owner, they can only delete the house and not leave it.
-
 import { Handlers } from "$fresh/server.ts";
 import { Status } from "http";
 import House from "@/models/House.ts";
@@ -10,7 +8,7 @@ import envConfig from "@/utils/config.ts";
 
 
 export const handler: Handlers = {
-  async DELETE(_req: Request, ctx) {
+  async PATCH(_req: Request, ctx) {
     const user = ctx.state.user as UserWithIdType;
 			try {
 				const foundHouse= await House.findOne({users: user._id}) as unknown as HouseWithIdType;
