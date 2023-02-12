@@ -54,7 +54,7 @@ This will watch the project directory and restart as necessary.
       user can join owner in their virtual household).
 - [x] Leave household (household can have no users. Users can rejoin if they
       have a secret code).
-- [ ] Delete household (only the person who created the household can delete
+- [x] Delete household (only the person who created the household can delete
       it).
 
 :euro:
