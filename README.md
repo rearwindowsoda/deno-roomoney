@@ -134,3 +134,9 @@ For deployment / production check out [Deno Deploy](https://deno.com/deploy).
 :dizzy:
 
 - [ ] _Use the Preact testing library in a Deno environment._
+
+### Technical Debt
+
+- [ ] - Cards should be a component.
+- [ ] - Buttons should be a component.
+- [ ] - Alerts should be a component.
