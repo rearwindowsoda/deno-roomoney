@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout.tsx";
 import DeleteHouseForm from "@/islands/DeleteHouseForm.tsx";
+import GoBackAnchor from "@/components/Common/GoBackAnchor.tsx";
 
 export default function DeleteHouse() {
   return (
@@ -18,9 +19,7 @@ export default function DeleteHouse() {
           </p>
         </div>
         <DeleteHouseForm />
-        <a href="/dashboard/house" class="btn btn-outline-light mt-4">
-          Go Back
-        </a>
+				<GoBackAnchor link="/dashboard/house" />
       </>
     </Layout>
   );

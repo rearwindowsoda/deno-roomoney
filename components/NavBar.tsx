@@ -1,5 +1,6 @@
 import { isLogged } from "@/signals/isLogged.tsx";
 import { asset } from "$fresh/runtime.ts";
+import Anchor from "@/components/Common/Anchor.tsx";
 
 function NavBar() {
   return (
@@ -19,20 +20,20 @@ function NavBar() {
                 ? (
                   <>
                     <li class="nav-item">
-                      <a class="nav-link" href="/dashboard">Dashboard</a>
+											<Anchor class="nav-link" link="/dashboard" name="Dashboard" />
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/logout">Logout</a>
+										<Anchor class="nav-link" link="/logout" name="Logout" />
                     </li>
                   </>
                 )
                 : (
                   <>
                     <li class="nav-item">
-                      <a class="nav-link" href="/login">Log in</a>
+										<Anchor class="nav-link" link="/login" name="Login in" />
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="/register">Sign up</a>
+										<Anchor class="nav-link" link="/register" name="Sign up" />
                     </li>
                   </>
                 )}

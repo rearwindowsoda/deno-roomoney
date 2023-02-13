@@ -8,8 +8,13 @@ function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
     { name: string; amount: number; paidBy: string | null }
   >({ name: "", amount: 0, paidBy: null });
 
+
   async function validateForm(event: JSX.TargetedEvent) {
     event.preventDefault();
+		if(!credentials.paidBy) {
+			setMessage("Who paid for this? Check the correct radio button.");
+			return;
+		}
     // try {
     //	const addPurchaseRequest = await fetch('/api/purchases/add-purchase', {
     //		method: "POST",
@@ -36,7 +41,7 @@ function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
       {props.data.errorMessage &&
         (
           <div class="alert mt-4 mb-4 alert-secondary">
-            <strong>Oops 😢!</strong>
+            <strong>Oops 😢! </strong>
             {props.data.errorMessage}
           </div>
         )}
@@ -80,6 +85,7 @@ function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
                 <input
                   type="number"
                   min={1}
+									step={0.01}
                   readonly={false}
                   class="form-control"
                   id="amount"
@@ -105,19 +111,21 @@ function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
                 return (
                   <>
                     <div class="form-check">
-                      <label class="form-check-label" for="optionsRadios1">
+                      <label class="form-check-label"  for={`optionsRadios-${el._id.toString()}`}>
                         <input
                           class="form-check-input"
                           type="radio"
                           name="paidBy"
+													id={`optionsRadios-${el._id.toString()}`}
                           value={el._id.toString()}
                           key={el._id.toString()}
-                          checked={false}
-                          onChange={(e) =>
-                            setCredentials({
-                              ...credentials,
+                          onClick={(e) => {
+														setCredentials({
+															...credentials,
                               paidBy: e.currentTarget.value,
                             })}
+													}
+													checked={credentials.paidBy === el._id.toString()}
                         />
                         Paid by {el.login}
                       </label>
@@ -137,7 +145,7 @@ function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
         {message &&
           (
             <div class="alert mt-4 alert-secondary">
-              <strong>Oops 😢!</strong>
+              <strong>Oops 😢! </strong>
               {message}
             </div>
           )}
