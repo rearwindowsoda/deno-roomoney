@@ -1,4 +1,6 @@
 import Layout from "@/components/Layout.tsx";
+import Anchor from "@/components/Common/Anchor.tsx";
+
 
 export default function Dashboard() {
   return (
@@ -17,9 +19,7 @@ export default function Dashboard() {
                 See, add, edit, remove purchases in your household.
               </h4>
               <p class="card-text">
-                <a href="/dashboard/purchase" class="btn btn-info">
-                  🛒 Go to purchases
-                </a>
+								<Anchor name="🛒 Go to purchases" link="/dashboard/purchase" class="btn btn-info" />
               </p>
             </div>
           </div>
@@ -28,9 +28,7 @@ export default function Dashboard() {
             <div class="card-body">
               <h4 class="card-title">Create, join or delete households.</h4>
               <p class="card-text">
-                <a href="/dashboard/house" class="btn btn-info">
-                  🏠 Manage households
-                </a>
+							<Anchor name="🏠 Manage households" link="/dashboard/house" class="btn btn-info" />
               </p>
             </div>
           </div>
@@ -39,7 +37,7 @@ export default function Dashboard() {
             <div class="card-body">
               <h4 class="card-title">Go back</h4>
               <p class="card-text">
-                <a href="/" class="btn btn-info">🏡 Go to the home page</a>
+							<Anchor name="🏡 Go to the home page" link="/" class="btn btn-info" />
               </p>
             </div>
           </div>

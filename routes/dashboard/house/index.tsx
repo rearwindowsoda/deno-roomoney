@@ -1,10 +1,11 @@
-import Layout from "@/components/Layout.tsx";
 import { Handlers } from "$fresh/server.ts";
-import House from "@/models/House.ts";
-import { UserWithIdType } from "@/interfaces/UserInterface.ts";
-import { HouseWithIdType } from "@/interfaces/HouseInterface.ts";
-import GoBackAnchor from "@/components/Common/GoBackAnchor.tsx";
 import Anchor from "@/components/Common/Anchor.tsx";
+import GoBackAnchor from "@/components/Common/GoBackAnchor.tsx";
+import Layout from "@/components/Layout.tsx";
+import { HouseWithIdType } from "@/interfaces/HouseInterface.ts";
+import { UserWithIdType } from "@/interfaces/UserInterface.ts";
+import House from "@/models/House.ts";
+
 
 
 export const handler: Handlers = {

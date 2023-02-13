@@ -1,8 +1,9 @@
 import { Handlers } from "$fresh/server.ts";
 import Layout from "@/components/Layout.tsx";
+import envConfig from "@/utils/config.ts";
 import MainAlert from "@/islands/MainAlert.tsx";
 import { isLogged } from "@/signals/isLogged.tsx";
-import envConfig from "@/utils/config.ts";
+import SingleCard from "@/components/Common/SingleCard.tsx";
 
 export const handler: Handlers = {
   GET(req, ctx) {
@@ -32,22 +33,12 @@ export default function Home({ data }: { data: HomeParamsInterface }) {
     <Layout title="Roomoney 💰">
       <h1 class="mt-4">Roomoney App</h1>
       {data.message && <MainAlert message={data.message} />}
-
       <div class="d-flex justify-content-center mt-4 gap-4 p-4 flex-wrap">
-        <div class="card border-light mb-3" style="max-width: 20rem;">
-          <div class="card-header">Welcome to Roomoney.</div>
-          <div class="card-body">
-            <h4 class="card-title">
-              Keep track of all the money that goes into your household.
-            </h4>
-            <p class="card-text">
-              Roomoney is a user-friendly app that enables you to create and
+			<SingleCard class="card border-light mb-3" header="Welcome to Roomoney." text="Roomoney is a user-friendly app that enables you to create and
               manage virtual households. Once you've established a household,
               you can invite fellow resident to join. This way, you can easily
-              keep track of all household purchases and expenditures.
-            </p>
-          </div>
-        </div>
+              keep track of all household purchases and expenditures." title="Keep track of all the money that goes into your household." />
+    
         {isLogged.value === true
           ? (
             <div class="card border-dark mb-3" style="max-width: 20rem;">

@@ -1,6 +1,6 @@
 import { UnknownPageProps } from "$fresh/server.ts";
 import Layout from "@/components/Layout.tsx";
-
+import Anchor from "@/components/Common/Anchor.tsx";
 export default function NotFoundPage({ url }: UnknownPageProps) {
   return (
     <Layout title="Roomoney 💰 - Not found 🙅🏿">
@@ -17,7 +17,7 @@ export default function NotFoundPage({ url }: UnknownPageProps) {
                 <strong class="text-warning">not found</strong>.
               </p>
               <p class="card-text">
-                <a href="/" class="btn btn-danger">Go back home</a>
+								<Anchor class="btn btn-danger" link="/" name="Go back home" />
               </p>
             </div>
           </div>
