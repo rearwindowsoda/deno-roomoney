@@ -89,6 +89,7 @@ For deployment / production check out [Deno Deploy](https://deno.com/deploy).
 :truck:
 
 - [ ] Implement API routes.
+- [ ] Add Insomnia JSON File.
 
 :man:
 
@@ -114,8 +115,8 @@ For deployment / production check out [Deno Deploy](https://deno.com/deploy).
 
 :euro:
 
-- [ ] Implement Zod validation schemas.
-- [ ] Mongoose Models.
+- [x] Implement Zod validation schemas.
+- [x] Mongoose Models.
 - [ ] Add, remove, and edit purchases. Everyone in the house can add a purchase.
       Purchase can be edited only by a person who paid for it.
 - [ ] Show all the purchases from a household that user is a resident of.
@@ -124,7 +125,7 @@ For deployment / production check out [Deno Deploy](https://deno.com/deploy).
 - [ ] Display a chart to show who owes whom and how much.
 - [ ] Provide the ability to change the balance when someone makes a transfer
       (i.e., when one person pays another some or all of what they owe).
-- [ ] Add a split button in the purchase-adding form that divides the amount
+- [x] Add a split button in the purchase-adding form that divides the amount
       into two equal parts.
 
 :scroll:
@@ -134,3 +135,11 @@ For deployment / production check out [Deno Deploy](https://deno.com/deploy).
 :dizzy:
 
 - [ ] _Use the Preact testing library in a Deno environment._
+
+### Technical Debt
+
+- [x] Cards should be a component.
+  - For now, only simple, text card are components.
+- [x] Buttons should be a component.
+  - Simple buttons are components.
+- [x] Alerts should be a component.

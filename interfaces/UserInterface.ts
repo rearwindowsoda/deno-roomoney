@@ -12,7 +12,7 @@ const UserWithoutId = z.object({
   }).min(5).max(20),
   createdAt: z.date({ required_error: "Date is required" }).default(new Date()),
   isAdmin: z.boolean().default(false),
-  houses: z.string().array().default([]),
+  houses: z.instanceof(Types.ObjectId).array().default([]),
 });
 
 const UserWithId = UserWithoutId.extend({

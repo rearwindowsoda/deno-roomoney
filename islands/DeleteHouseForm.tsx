@@ -1,5 +1,6 @@
 import { useState } from "preact/hooks";
 import { JSX } from "preact/jsx-runtime";
+import Alert from "@/components/Common/Alert.tsx";
 
 function DeleteHouseForm() {
   const [message, setMessage] = useState<string>("");
@@ -37,18 +38,12 @@ function DeleteHouseForm() {
           Do you want to <strong>delete</strong>{" "}
           your current virtual household? You cannot reverse this operation 😨!
         </h2>
-
         <button class="btn btn-info" type="submit" onClick={goBack}>No!</button>
         <button class="btn btn-danger" type="submit" onClick={validateForm}>
           Yes!
         </button>
         {message &&
-          (
-            <div class="alert mt-4 alert-secondary">
-              <strong>Oops 😢!</strong>
-              {message}
-            </div>
-          )}
+          <Alert class="alert mt-4 alert-secondary" message={message} />}
       </div>
     </>
   );

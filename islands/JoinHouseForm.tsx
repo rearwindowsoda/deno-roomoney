@@ -1,5 +1,7 @@
 import { useState } from "preact/hooks";
 import { JSX } from "preact/jsx-runtime";
+import Alert from "@/components/Common/Alert.tsx";
+import Button from "@/components/Common/Button.tsx";
 
 function JoinHouseForm() {
   const [message, setMessage] = useState<string>("");
@@ -62,16 +64,9 @@ function JoinHouseForm() {
             </label>
           </div>
         </fieldset>
-        <button type="submit" class="btn btn-primary">
-          Join someone's household 🏚️
-        </button>
+        <Button class="btn btn-primary" name="Join someone's household 🏚️" />
         {message &&
-          (
-            <div class="alert mt-4 alert-secondary">
-              <strong>Oops 😢!</strong>
-              {message}
-            </div>
-          )}
+          <Alert class="alert mt-4 alert-secondary" message={message} />}
       </form>
     </>
   );

@@ -77,7 +77,8 @@ export const handler: Handlers = {
         );
       } catch (e) {
         console.error(e);
-        const firstError: ZodError = JSON.parse(e)[0].message;
+        const zodError = JSON.parse(e);
+        const firstError: ZodError = zodError[0].message;
         return new Response(
           JSON.stringify({
             message: firstError,

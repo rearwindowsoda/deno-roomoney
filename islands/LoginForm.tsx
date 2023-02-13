@@ -1,5 +1,7 @@
 import { useState } from "preact/hooks";
 import { JSX } from "preact/jsx-runtime";
+import Alert from "@/components/Common/Alert.tsx";
+import Button from "@/components/Common/Button.tsx";
 
 function LoginForm() {
   const [errorMessage, setErrorMessage] = useState<string>("");
@@ -87,14 +89,10 @@ function LoginForm() {
             </label>
           </div>
         </fieldset>
-        <button type="submit" class="btn btn-primary">Log in 🔒</button>
+        <Button class="btn btn-primary" name="Log in 🔒" />
+
         {errorMessage &&
-          (
-            <div class="alert mt-4 alert-secondary">
-              <strong>Oops 😢!</strong>
-              {errorMessage}
-            </div>
-          )}
+          <Alert class="alert mt-4 alert-secondary" message={errorMessage} />}
       </form>
     </>
   );

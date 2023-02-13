@@ -8,7 +8,7 @@ import type { UserWithIdType as UserWithId } from "@/interfaces/UserInterface.ts
 import { isLogged } from "@/signals/isLogged.tsx";
 
 export const handler: Handlers = {
-  async POST(req) {
+  async POST(req, _ctx) {
     const url = new URL(req.url);
     const data: { login: string; password: string } = await req.json();
     const username: string | undefined = data.login;

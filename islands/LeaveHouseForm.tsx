@@ -1,5 +1,6 @@
 import { useState } from "preact/hooks";
 import { JSX } from "preact/jsx-runtime";
+import Alert from "@/components/Common/Alert.tsx";
 
 function LeaveHouseForm() {
   const [message, setMessage] = useState<string>("");
@@ -42,12 +43,7 @@ function LeaveHouseForm() {
           Yes!
         </button>
         {message &&
-          (
-            <div class="alert mt-4 alert-secondary">
-              <strong>Oops 😢!</strong>
-              {message}
-            </div>
-          )}
+          <Alert class="alert mt-4 alert-secondary" message={message} />}
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout.tsx";
 import CreateHouseForm from "@/islands/CreateHouseForm.tsx";
+import GoBackAnchor from "@/components/Common/GoBackAnchor.tsx";
 
 export default function CreateHouse() {
   return (
@@ -16,9 +17,7 @@ export default function CreateHouse() {
           </p>
         </div>
         <CreateHouseForm />
-        <a href="/dashboard/house" class="btn btn-outline-light mt-4">
-          Go Back
-        </a>
+        <GoBackAnchor link="/dashboard/house" />
       </>
     </Layout>
   );
