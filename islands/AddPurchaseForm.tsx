@@ -1,6 +1,7 @@
-import { AddPurchaseHouseInterface } from "@/routes/dashboard/purchase/add/index.tsx";
-import { useState } from "preact/hooks";
 import { JSX } from "preact/jsx-runtime";
+import { useState } from "preact/hooks";
+import { AddPurchaseHouseInterface } from "@/routes/dashboard/purchase/add/index.tsx";
+import Alert from "@/components/Common/Alert.tsx";
 
 function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
   const [message, setMessage] = useState<string>("");
@@ -11,27 +12,28 @@ function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
 
   async function validateForm(event: JSX.TargetedEvent) {
     event.preventDefault();
+		console.log(credentials);
 		if(!credentials.paidBy) {
 			setMessage("Who paid for this? Check the correct radio button.");
 			return;
 		}
-    // try {
-    //	const addPurchaseRequest = await fetch('/api/purchases/add-purchase', {
-    //		method: "POST",
-    //		headers: {
-    //			"content-type": "application/json"
-    //		},
-    //		body: JSON.stringify(credentials)
-    //	});
-    //	const response = await addPurchaseRequest.json();
-    //	if(response.location){
-    //		window.location.href = response.location;
-    //		return;
-    //	}
-    //	setMessage(response.message);
-    // } catch (error) {
-    //	 setMessage("Something went wrong. Try again later.")
-    // }
+     try {
+    	const addPurchaseRequest = await fetch("/api/purchases/add-purchase", {
+    		method: "POST",
+    		headers: {
+    			"content-type": "application/json"
+    		},
+    		body: JSON.stringify(credentials)
+    	});
+    	const response = await addPurchaseRequest.json();
+    	if(response.location){
+    		window.location.href = response.location;
+    		return;
+    	}
+    	setMessage(response.message);
+     } catch (error) {
+    	 setMessage("Something went wrong. Try again later.")
+     }
   }
   return (
     <>
@@ -40,10 +42,7 @@ function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
       </a>
       {props.data.errorMessage &&
         (
-          <div class="alert mt-4 mb-4 alert-secondary">
-            <strong>Oops 😢! </strong>
-            {props.data.errorMessage}
-          </div>
+					<Alert class="alert mt-4 mb-4 alert-secondary" message={props.data.errorMessage}/ >
         )}
       <form data-bitwarden-watching="1" onSubmit={validateForm}>
         <fieldset>
@@ -90,6 +89,7 @@ function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
                   class="form-control"
                   id="amount"
                   placeholder="0"
+									defaultValue=""
                   onInput={(e) =>
                     setCredentials({
                       ...credentials,
@@ -144,10 +144,7 @@ function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
         </button>
         {message &&
           (
-            <div class="alert mt-4 alert-secondary">
-              <strong>Oops 😢! </strong>
-              {message}
-            </div>
+						<Alert class="alert mt-4 alert-secondary" message="message"/>
           )}
       </form>
     </>

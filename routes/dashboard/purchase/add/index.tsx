@@ -12,7 +12,7 @@ export const handler: Handlers = {
     if (!foundHouse) {
       return ctx.render({
         errorMessage:
-          "You are now in any household right now. Adding purchases will not work.",
+          "You haven't joined or created any household. Adding purchases will not work.",
       });
     } else {
       const users = await User.find({ _id: { $in: foundHouse.users } });
