@@ -1,18 +1,32 @@
 import { JSX } from "preact/jsx-runtime";
-import { useState } from "preact/hooks";
+import { useRef, useState } from "preact/hooks";
 import { AddPurchaseHouseInterface } from "@/routes/dashboard/purchase/add/index.tsx";
 import Alert from "@/components/Common/Alert.tsx";
+import GoBackAnchor from "@/components/Common/GoBackAnchor.tsx";
+
+
 
 function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
   const [message, setMessage] = useState<string>("");
   const [credentials, setCredentials] = useState<
     { name: string; amount: number; paidBy: string | null }
   >({ name: "", amount: 0, paidBy: null });
+	const amountInput = useRef<HTMLInputElement>(null);
 
-
+	function splitAmount(event: JSX.TargetedEvent) {
+		event.preventDefault();
+		const amount = Number(credentials.amount)
+		let halfAmount;
+		if(!isNaN(amount) && amount > 0){
+			halfAmount = Math.round(Number(credentials.amount / 2) * 100) / 100;
+			amountInput.current!.value = halfAmount.toString();
+			setCredentials({...credentials, amount: halfAmount}) 
+		}else {
+			return
+		}
+	}
   async function validateForm(event: JSX.TargetedEvent) {
     event.preventDefault();
-		console.log(credentials);
 		if(!credentials.paidBy) {
 			setMessage("Who paid for this? Check the correct radio button.");
 			return;
@@ -37,9 +51,8 @@ function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
   }
   return (
     <>
-      <a href="/dashboard/purchase" class="btn btn-outline-secondary mb-4">
-        Go back
-      </a>
+		<GoBackAnchor link="/dashboard/purchase" />
+      
       {props.data.errorMessage &&
         (
 					<Alert class="alert mt-4 mb-4 alert-secondary" message={props.data.errorMessage}/ >
@@ -90,6 +103,7 @@ function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
                   id="amount"
                   placeholder="0"
 									defaultValue=""
+									ref={amountInput}
                   onInput={(e) =>
                     setCredentials({
                       ...credentials,
@@ -142,6 +156,13 @@ function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
         >
           Add purchase 🛒
         </button>
+				<button
+				class="btn btn-outline-light mx-4"
+				disabled={!!props.data.errorMessage}
+				onClick={splitAmount}
+				>
+				Split amount ½
+				</button>
         {message &&
           (
 						<Alert class="alert mt-4 alert-secondary" message="message"/>
