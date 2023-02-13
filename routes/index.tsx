@@ -34,11 +34,16 @@ export default function Home({ data }: { data: HomeParamsInterface }) {
       <h1 class="mt-4">Roomoney App</h1>
       {data.message && <MainAlert message={data.message} />}
       <div class="d-flex justify-content-center mt-4 gap-4 p-4 flex-wrap">
-			<SingleCard class="card border-light mb-3" header="Welcome to Roomoney." text="Roomoney is a user-friendly app that enables you to create and
+        <SingleCard
+          class="card border-light mb-3"
+          header="Welcome to Roomoney."
+          text="Roomoney is a user-friendly app that enables you to create and
               manage virtual households. Once you've established a household,
               you can invite fellow resident to join. This way, you can easily
-              keep track of all household purchases and expenditures." title="Keep track of all the money that goes into your household." />
-    
+              keep track of all household purchases and expenditures."
+          title="Keep track of all the money that goes into your household."
+        />
+
         {isLogged.value === true
           ? (
             <div class="card border-dark mb-3" style="max-width: 20rem;">

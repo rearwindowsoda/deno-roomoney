@@ -17,8 +17,8 @@ export default function CreateHouse() {
           </p>
         </div>
         <CreateHouseForm />
-				<GoBackAnchor link="/dashboard/house" />
-				</>
+        <GoBackAnchor link="/dashboard/house" />
+      </>
     </Layout>
   );
 }

@@ -64,11 +64,9 @@ function JoinHouseForm() {
             </label>
           </div>
         </fieldset>
-				<Button class="btn btn-primary" name="Join someone's household 🏚️" />
+        <Button class="btn btn-primary" name="Join someone's household 🏚️" />
         {message &&
-          (
-						<Alert class="alert mt-4 alert-secondary" message={message}/>
-          )}
+          <Alert class="alert mt-4 alert-secondary" message={message} />}
       </form>
     </>
   );

@@ -89,12 +89,10 @@ function LoginForm() {
             </label>
           </div>
         </fieldset>
-				<Button class="btn btn-primary" name="Log in 🔒" />
-        
+        <Button class="btn btn-primary" name="Log in 🔒" />
+
         {errorMessage &&
-          (
-            <Alert class="alert mt-4 alert-secondary" message={errorMessage}/>
-          )}
+          <Alert class="alert mt-4 alert-secondary" message={errorMessage} />}
       </form>
     </>
   );

@@ -2,7 +2,6 @@ import Layout from "@/components/Layout.tsx";
 import JoinHouseForm from "@/islands/JoinHouseForm.tsx";
 import GoBackAnchor from "@/components/Common/GoBackAnchor.tsx";
 
-
 export default function JoinHouse() {
   return (
     <Layout title="Roomoney 💰 - Join House">
@@ -18,7 +17,7 @@ export default function JoinHouse() {
           </p>
         </div>
         <JoinHouseForm />
-				<GoBackAnchor link="/dashboard/house" />
+        <GoBackAnchor link="/dashboard/house" />
       </>
     </Layout>
   );

@@ -43,9 +43,7 @@ function LeaveHouseForm() {
           Yes!
         </button>
         {message &&
-          (
-            <Alert class="alert mt-4 alert-secondary" message={message}/>
-          )}
+          <Alert class="alert mt-4 alert-secondary" message={message} />}
       </div>
     </>
   );

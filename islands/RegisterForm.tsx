@@ -93,11 +93,9 @@ function RegisterForm() {
             </label>
           </div>
         </fieldset>
-				<Button class="btn btn-primary" name="Sign up 🗝️" />
+        <Button class="btn btn-primary" name="Sign up 🗝️" />
         {errorMessage &&
-          (
-            <Alert class="alert mt-4 alert-secondary" message={errorMessage}/>
-          )}
+          <Alert class="alert mt-4 alert-secondary" message={errorMessage} />}
       </form>
     </>
   );

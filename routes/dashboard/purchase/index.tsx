@@ -10,7 +10,7 @@ export default function DashboardPurchase() {
         <p>
           You can create, edit and delete purchases here.
         </p>
-				<GoBackAnchor link="/dashboard" />
+        <GoBackAnchor link="/dashboard" />
         <div class="d-flex justify-content-center mt-4 gap-4 p-4 flex-wrap">
           <div class="card border-success mb-3" style="max-width: 20rem;">
             <div class="card-header">Add new purchase</div>
@@ -20,7 +20,11 @@ export default function DashboardPurchase() {
                 Click the button below to add new purchase.
               </p>
               <p class="card-text">
-								<Anchor link="/dashboard/purchase/add" name="🛒 Add purchase" class="btn btn-info" />
+                <Anchor
+                  link="/dashboard/purchase/add"
+                  name="🛒 Add purchase"
+                  class="btn btn-info"
+                />
               </p>
             </div>
           </div>
@@ -34,7 +38,11 @@ export default function DashboardPurchase() {
                 You can list, edit and remove purchases here
               </p>
               <p class="card-text">
-							<Anchor link="/dashboard/house/list" name="🏡 🧑‍🤝‍🧑 List purchases here" class="btn btn-success" />
+                <Anchor
+                  link="/dashboard/house/list"
+                  name="🏡 🧑‍🤝‍🧑 List purchases here"
+                  class="btn btn-success"
+                />
               </p>
             </div>
           </div>

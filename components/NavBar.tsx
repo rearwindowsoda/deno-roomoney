@@ -20,20 +20,28 @@ function NavBar() {
                 ? (
                   <>
                     <li class="nav-item">
-											<Anchor class="nav-link" link="/dashboard" name="Dashboard" />
+                      <Anchor
+                        class="nav-link"
+                        link="/dashboard"
+                        name="Dashboard"
+                      />
                     </li>
                     <li class="nav-item">
-										<Anchor class="nav-link" link="/logout" name="Logout" />
+                      <Anchor class="nav-link" link="/logout" name="Logout" />
                     </li>
                   </>
                 )
                 : (
                   <>
                     <li class="nav-item">
-										<Anchor class="nav-link" link="/login" name="Login in" />
+                      <Anchor class="nav-link" link="/login" name="Login in" />
                     </li>
                     <li class="nav-item">
-										<Anchor class="nav-link" link="/register" name="Sign up" />
+                      <Anchor
+                        class="nav-link"
+                        link="/register"
+                        name="Sign up"
+                      />
                     </li>
                   </>
                 )}

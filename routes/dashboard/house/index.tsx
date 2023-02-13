@@ -6,8 +6,6 @@ import { HouseWithIdType } from "@/interfaces/HouseInterface.ts";
 import { UserWithIdType } from "@/interfaces/UserInterface.ts";
 import House from "@/models/House.ts";
 
-
-
 export const handler: Handlers = {
   async GET(_req, ctx) {
     const user = ctx.state.user as UserWithIdType;
@@ -37,7 +35,7 @@ export default function DashboardHouse(
         <p>
           You can create, join and manage virutal households here.
         </p>
-				<GoBackAnchor link="/dashboard" />
+        <GoBackAnchor link="/dashboard" />
         <div class="d-flex justify-content-center mt-4 gap-4 p-4 flex-wrap">
           <div class="card border-primary mb-3" style="max-width: 20rem;">
             <div class="card-header">Create a virtual household</div>
@@ -55,7 +53,11 @@ export default function DashboardHouse(
                 household.
               </p>
               <p class="card-text">
-								<Anchor link="/dashboard/house/create" class="btn btn-info" name="🏠 Create a virtual household" />
+                <Anchor
+                  link="/dashboard/house/create"
+                  class="btn btn-info"
+                  name="🏠 Create a virtual household"
+                />
               </p>
             </div>
           </div>
@@ -72,7 +74,11 @@ export default function DashboardHouse(
                 given to you by household's owner.
               </p>
               <p class="card-text">
-							<Anchor link="/dashboard/house/join" class="btn btn-primary" name="🧑‍🤝‍🧑 Join someone's household" />
+                <Anchor
+                  link="/dashboard/house/join"
+                  class="btn btn-primary"
+                  name="🧑‍🤝‍🧑 Join someone's household"
+                />
               </p>
             </div>
           </div>
@@ -90,7 +96,11 @@ export default function DashboardHouse(
                 provided by the owner.
               </p>
               <p class="card-text">
-							<Anchor link="/dashboard/house/leave" class="btn btn-secondary" name="👋 Leave current household" />
+                <Anchor
+                  link="/dashboard/house/leave"
+                  class="btn btn-secondary"
+                  name="👋 Leave current household"
+                />
               </p>
             </div>
           </div>
@@ -108,7 +118,11 @@ export default function DashboardHouse(
                 will also be needed.
               </p>
               <p class="card-text">
-							<Anchor link="/dashboard/house/delete" class="btn btn-secondary" name="🙅🏻 Delete your household" />
+                <Anchor
+                  link="/dashboard/house/delete"
+                  class="btn btn-secondary"
+                  name="🙅🏻 Delete your household"
+                />
               </p>
             </div>
           </div>

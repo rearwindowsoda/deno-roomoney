@@ -17,7 +17,7 @@ export default function NotFoundPage({ url }: UnknownPageProps) {
                 <strong class="text-warning">not found</strong>.
               </p>
               <p class="card-text">
-								<Anchor class="btn btn-danger" link="/" name="Go back home" />
+                <Anchor class="btn btn-danger" link="/" name="Go back home" />
               </p>
             </div>
           </div>

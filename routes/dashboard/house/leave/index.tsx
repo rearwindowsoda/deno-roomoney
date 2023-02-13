@@ -2,7 +2,6 @@ import Layout from "@/components/Layout.tsx";
 import LeaveHouseForm from "@/islands/LeaveHouseForm.tsx";
 import GoBackAnchor from "@/components/Common/GoBackAnchor.tsx";
 
-
 export default function LeaveHouse() {
   return (
     <Layout title="Roomoney 💰 - Leave House">
@@ -19,7 +18,7 @@ export default function LeaveHouse() {
           </p>
         </div>
         <LeaveHouseForm />
-				<GoBackAnchor link="/dashboard/house" />
+        <GoBackAnchor link="/dashboard/house" />
       </>
     </Layout>
   );

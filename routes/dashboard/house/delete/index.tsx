@@ -19,7 +19,7 @@ export default function DeleteHouse() {
           </p>
         </div>
         <DeleteHouseForm />
-				<GoBackAnchor link="/dashboard/house" />
+        <GoBackAnchor link="/dashboard/house" />
       </>
     </Layout>
   );

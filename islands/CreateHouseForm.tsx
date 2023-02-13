@@ -63,13 +63,10 @@ function CreateHouseForm() {
             </label>
           </div>
         </fieldset>
-				<Button class="btn btn-primary" name="Create a household 🏚️" />
-        
+        <Button class="btn btn-primary" name="Create a household 🏚️" />
+
         {message &&
-          (
-						<Alert class="alert mt-4 alert-secondary" message={message}/>
-            
-          )}
+          <Alert class="alert mt-4 alert-secondary" message={message} />}
       </form>
     </>
   );

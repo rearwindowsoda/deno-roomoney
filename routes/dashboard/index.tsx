@@ -1,7 +1,6 @@
 import Layout from "@/components/Layout.tsx";
 import Anchor from "@/components/Common/Anchor.tsx";
 
-
 export default function Dashboard() {
   return (
     <Layout title="Roomoney 💰 - Dashboard">
@@ -19,7 +18,11 @@ export default function Dashboard() {
                 See, add, edit, remove purchases in your household.
               </h4>
               <p class="card-text">
-								<Anchor name="🛒 Go to purchases" link="/dashboard/purchase" class="btn btn-info" />
+                <Anchor
+                  name="🛒 Go to purchases"
+                  link="/dashboard/purchase"
+                  class="btn btn-info"
+                />
               </p>
             </div>
           </div>
@@ -28,7 +31,11 @@ export default function Dashboard() {
             <div class="card-body">
               <h4 class="card-title">Create, join or delete households.</h4>
               <p class="card-text">
-							<Anchor name="🏠 Manage households" link="/dashboard/house" class="btn btn-info" />
+                <Anchor
+                  name="🏠 Manage households"
+                  link="/dashboard/house"
+                  class="btn btn-info"
+                />
               </p>
             </div>
           </div>
@@ -37,7 +44,11 @@ export default function Dashboard() {
             <div class="card-body">
               <h4 class="card-title">Go back</h4>
               <p class="card-text">
-							<Anchor name="🏡 Go to the home page" link="/" class="btn btn-info" />
+                <Anchor
+                  name="🏡 Go to the home page"
+                  link="/"
+                  class="btn btn-info"
+                />
               </p>
             </div>
           </div>
