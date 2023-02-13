@@ -14,14 +14,19 @@ export const handler: Handlers = {
         errorMessage:
           "You haven't joined or created any household. Adding purchases will not work.",
       });
-    } else {
-      const users = await User.find({ _id: { $in: foundHouse.users } });
-      console.log(users);
-
+    }
+    if (foundHouse.users.length < 2) {
       return ctx.render({
-        users,
+        errorMessage:
+          "You are the only one in your household. Adding purchases will not work.",
       });
     }
+    const users = await User.find({ _id: { $in: foundHouse.users } });
+    console.log(users);
+
+    return ctx.render({
+      users,
+    });
   },
 };
 

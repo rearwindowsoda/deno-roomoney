@@ -39,7 +39,7 @@ export default function DashboardPurchase() {
               </p>
               <p class="card-text">
                 <Anchor
-                  link="/dashboard/house/list"
+                  link="/dashboard/purchase/list"
                   name="🏡 🧑‍🤝‍🧑 List purchases here"
                   class="btn btn-success"
                 />

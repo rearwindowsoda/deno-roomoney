@@ -23,21 +23,23 @@ import * as $16 from "./routes/dashboard/house/leave/index.tsx";
 import * as $17 from "./routes/dashboard/index.tsx";
 import * as $18 from "./routes/dashboard/purchase/add/index.tsx";
 import * as $19 from "./routes/dashboard/purchase/index.tsx";
-import * as $20 from "./routes/dashboard/purchase/one/[id].tsx";
-import * as $21 from "./routes/index.tsx";
-import * as $22 from "./routes/login/_middleware.ts";
-import * as $23 from "./routes/login/index.tsx";
-import * as $24 from "./routes/logout.ts";
-import * as $25 from "./routes/register/_middleware.ts";
-import * as $26 from "./routes/register/index.tsx";
+import * as $20 from "./routes/dashboard/purchase/list/index.tsx";
+import * as $21 from "./routes/dashboard/purchase/one/[id].tsx";
+import * as $22 from "./routes/index.tsx";
+import * as $23 from "./routes/login/_middleware.ts";
+import * as $24 from "./routes/login/index.tsx";
+import * as $25 from "./routes/logout.ts";
+import * as $26 from "./routes/register/_middleware.ts";
+import * as $27 from "./routes/register/index.tsx";
 import * as $$0 from "./islands/AddPurchaseForm.tsx";
 import * as $$1 from "./islands/CreateHouseForm.tsx";
 import * as $$2 from "./islands/DeleteHouseForm.tsx";
 import * as $$3 from "./islands/JoinHouseForm.tsx";
 import * as $$4 from "./islands/LeaveHouseForm.tsx";
-import * as $$5 from "./islands/LoginForm.tsx";
-import * as $$6 from "./islands/MainAlert.tsx";
-import * as $$7 from "./islands/RegisterForm.tsx";
+import * as $$5 from "./islands/ListPurchasesIsland.tsx";
+import * as $$6 from "./islands/LoginForm.tsx";
+import * as $$7 from "./islands/MainAlert.tsx";
+import * as $$8 from "./islands/RegisterForm.tsx";
 
 const manifest = {
   routes: {
@@ -61,13 +63,14 @@ const manifest = {
     "./routes/dashboard/index.tsx": $17,
     "./routes/dashboard/purchase/add/index.tsx": $18,
     "./routes/dashboard/purchase/index.tsx": $19,
-    "./routes/dashboard/purchase/one/[id].tsx": $20,
-    "./routes/index.tsx": $21,
-    "./routes/login/_middleware.ts": $22,
-    "./routes/login/index.tsx": $23,
-    "./routes/logout.ts": $24,
-    "./routes/register/_middleware.ts": $25,
-    "./routes/register/index.tsx": $26,
+    "./routes/dashboard/purchase/list/index.tsx": $20,
+    "./routes/dashboard/purchase/one/[id].tsx": $21,
+    "./routes/index.tsx": $22,
+    "./routes/login/_middleware.ts": $23,
+    "./routes/login/index.tsx": $24,
+    "./routes/logout.ts": $25,
+    "./routes/register/_middleware.ts": $26,
+    "./routes/register/index.tsx": $27,
   },
   islands: {
     "./islands/AddPurchaseForm.tsx": $$0,
@@ -75,9 +78,10 @@ const manifest = {
     "./islands/DeleteHouseForm.tsx": $$2,
     "./islands/JoinHouseForm.tsx": $$3,
     "./islands/LeaveHouseForm.tsx": $$4,
-    "./islands/LoginForm.tsx": $$5,
-    "./islands/MainAlert.tsx": $$6,
-    "./islands/RegisterForm.tsx": $$7,
+    "./islands/ListPurchasesIsland.tsx": $$5,
+    "./islands/LoginForm.tsx": $$6,
+    "./islands/MainAlert.tsx": $$7,
+    "./islands/RegisterForm.tsx": $$8,
   },
   baseUrl: import.meta.url,
   config,
