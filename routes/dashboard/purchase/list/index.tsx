@@ -21,7 +21,7 @@ export const handler: Handlers = {
     if (!loggedUsersHouse) {
       return ctx.render({
         errorMessage:
-          "You are not in any household right now. Add or create one.",
+          "You are not in any household right now. Listing purchases will not work.",
       });
     }
     const secondUser = await User.findOne({
@@ -29,12 +29,7 @@ export const handler: Handlers = {
         $in: loggedUsersHouse.users.filter((el) => !el.equals(loggedUser._id)),
       },
     });
-    if (!loggedUsersHouse) {
-      return ctx.render({
-        errorMessage:
-          "You haven't joined or created any household. Listing purchases will not work.",
-      });
-    }
+
     if (!secondUser) {
       return ctx.render({
         errorMessage:
