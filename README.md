@@ -81,14 +81,14 @@ For deployment / production check out [Deno Deploy](https://deno.com/deploy).
 - [x] Middlewares (ensureAuth / ensureNotAuth).
 - [x] Organize imports
   - [x] Add missing aliases
-- [ ] Webmanifest (icons and standalone)
-- [ ] Deploy to _Deno Deploy_.
+- [x] Webmanifest (icons and standalone)
+- [x] Deploy to _Deno Deploy_.
 
 ### API
 
 :truck:
 
-- [ ] Implement API routes.
+- [x] Implement API routes.
 - [ ] Add Insomnia JSON File.
 
 :man:
@@ -117,13 +117,13 @@ For deployment / production check out [Deno Deploy](https://deno.com/deploy).
 
 - [x] Implement Zod validation schemas.
 - [x] Mongoose Models.
-- [ ] Add, remove, and edit purchases. Everyone in the house can add a purchase.
+- [x] Add, remove, and edit purchases. Everyone in the house can add a purchase.
       Purchase can be edited only by a person who paid for it.
-- [ ] Show all the purchases from a household that user is a resident of.
-- [ ] Show the amount of all purchases.
-- [ ] Display the total amount spent by each user on household purchases.
-- [ ] Display a chart to show who owes whom and how much.
-- [ ] Provide the ability to change the balance when someone makes a transfer
+- [x] Show all the purchases from a household that user is a resident of.
+- [x] Show the amount of all purchases.
+- [x] Display the total amount spent by each user on household purchases.
+- [x] Display a chart to show who owes whom and how much.
+- [x] Provide the ability to change the balance when someone makes a transfer
       (i.e., when one person pays another some or all of what they owe).
 - [x] Add a split button in the purchase-adding form that divides the amount
       into two equal parts.
