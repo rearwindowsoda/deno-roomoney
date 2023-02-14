@@ -1,9 +1,9 @@
 import { Handlers } from "$fresh/server.ts";
 import Layout from "@/components/Layout.tsx";
 import { UserWithIdType } from "@/interfaces/UserInterface.ts";
-import AddPurchaseForm from "@/islands/AddPurchaseForm.tsx";
 import House from "@/models/House.ts";
 import User from "@/models/User.ts";
+import RecievePurchaseForm from "@/islands/RecievePurchaseForm.tsx";
 
 export const handler: Handlers = {
   async GET(_req, ctx) {
@@ -22,33 +22,30 @@ export const handler: Handlers = {
       });
     }
     const users = await User.find({ _id: { $in: foundHouse.users } });
-    console.log(users);
-
+    const otherUser = users.filter((user) => user._id !== foundUser._id)[0];
     return ctx.render({
-      users,
+      otherUser,
     });
   },
 };
 
-export interface AddPurchaseHouseInterface {
+export interface RecievePurchaseHouseInterface {
   errorMessage: string | null;
-  users: UserWithIdType[] | null;
+  otherUser: UserWithIdType;
 }
 
 export default function AddPurchase(
-  { data }: { data: AddPurchaseHouseInterface },
+  { data }: { data: RecievePurchaseHouseInterface },
 ) {
   return (
-    <Layout title="Roomoney 💰 - Add Purchase">
-      <>
-        <div className="container-sm mt-4">
-          <h1>Add Purchase</h1>
-          <p>
-            Add the new purchase using the form below. 😃.
-          </p>
-          <AddPurchaseForm data={data} />
-        </div>
-      </>
+    <Layout title="Roomoney 💰 - Recieved Payment">
+      <div className="container-sm mt-4">
+        <h1>Recieved payment</h1>
+        <p>
+          If you recieved payment from your roomate, fill the form below 😃.
+        </p>
+        <RecievePurchaseForm data={data} />
+      </div>
     </Layout>
   );
 }

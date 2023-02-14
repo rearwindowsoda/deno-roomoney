@@ -5,7 +5,7 @@ const PurchaseSchema = new Schema({
   paidBy: { type: Types.ObjectId, required: true },
   purchaseDate: { type: Date, default: Date.now, required: true },
   amount: { type: Number, required: true },
-  house: { type: String, required: true, trim: true },
+  house: { type: Types.ObjectId, required: true, trim: true },
 });
 
 export default model("Purchase", PurchaseSchema);

@@ -168,7 +168,7 @@ function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
           Split amount ½
         </button>
         {message &&
-          <Alert class="alert mt-4 alert-secondary" message="message" />}
+          <Alert class="alert mt-4 alert-secondary" message={message} />}
       </form>
     </>
   );

@@ -78,29 +78,41 @@ export const handler: Handlers = {
       } catch (e) {
         console.error(e);
         const zodError = JSON.parse(e);
-        const firstError: ZodError = zodError[0].message;
-        return new Response(
-          JSON.stringify({
-            message: firstError,
-            status: Status.UnprocessableEntity,
-          }),
-          {
-            headers: { "Content-Type": "application/json}" },
-            status: Status.UnprocessableEntity,
-          },
-        );
+        if (zodError[0].message || zodError.message) {
+          const firstError: ZodError = zodError[0].message || zodError.message;
+          return new Response(
+            JSON.stringify({
+              message: firstError,
+              status: Status.UnprocessableEntity,
+            }),
+            {
+              headers: { "Content-Type": "application/json}" },
+              status: Status.UnprocessableEntity,
+            },
+          );
+        } else {
+          return new Response(
+            JSON.stringify({
+              message: "Something went wrong. Try again later.",
+              status: Status.InternalServerError,
+            }),
+            {
+              headers: { "Content-Type": "application/json}" },
+              status: Status.InternalServerError,
+            },
+          );
+        }
       }
-    } else {
-      return new Response(
-        JSON.stringify({
-          message: "Something went wrong. Try again later.",
-          status: Status.InternalServerError,
-        }),
-        {
-          headers: { "Content-Type": "application/json}" },
-          status: Status.InternalServerError,
-        },
-      );
     }
+    return new Response(
+      JSON.stringify({
+        message: "Something went wrong. Try again later.",
+        status: Status.InternalServerError,
+      }),
+      {
+        headers: { "Content-Type": "application/json}" },
+        status: Status.InternalServerError,
+      },
+    );
   },
 };

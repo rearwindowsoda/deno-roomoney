@@ -15,6 +15,8 @@ const Layout: FunctionalComponent<LayoutProps> = ({ title, children }) => {
         <title>{title}</title>
         <link rel="stylesheet" href={asset("/css/bootstrap.min.css")} />
         <link rel="stylesheet" href={asset("/css/NavBar.css")} />
+        <link rel="stylesheet" href={asset("/css/Utils.css")} />
+        <link rel="manifest" href={asset("/manifest.json")} />
       </Head>
       <header>
         <NavBar></NavBar>
