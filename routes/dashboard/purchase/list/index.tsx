@@ -62,7 +62,11 @@ export default function ListHousePurchasesProps(
             <div className="container-sm mt-4">
               <h1>List purchases:</h1>
               <p>
-                See 50 last purchases made in your virtual household. 😃.
+                See 50 last purchases made in your virtual household 😃.
+              </p>
+              <p class="text-warning">
+                Click on the row with a specific purchase in the table so you
+                can edit or delete it.
               </p>
               <ListPurchasesIsland data={data} />
             </div>

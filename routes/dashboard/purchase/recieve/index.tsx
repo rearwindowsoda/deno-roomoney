@@ -39,15 +39,13 @@ export default function AddPurchase(
 ) {
   return (
     <Layout title="Roomoney 💰 - Recieved Payment">
-      <>
-        <div className="container-sm mt-4">
-          <h1>Recieved payment</h1>
-          <p>
-            If you recieved payment from your roomate, fill the form below 😃.
-          </p>
-          <RecievePurchaseForm data={data} />
-        </div>
-      </>
+      <div className="container-sm mt-4">
+        <h1>Recieved payment</h1>
+        <p>
+          If you recieved payment from your roomate, fill the form below 😃.
+        </p>
+        <RecievePurchaseForm data={data} />
+      </div>
     </Layout>
   );
 }

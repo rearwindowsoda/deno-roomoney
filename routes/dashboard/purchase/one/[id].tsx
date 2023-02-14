@@ -1,18 +1,29 @@
-//TODO: Handler. Find purchase by id from params and fill the form with purchase data. Submitting form will edit the purchase and list all purchases dashbaord/purchase/list. Need an API route to do editing.
-
-import { PageProps } from "$fresh/server.ts";
+import { Handlers, PageProps } from "$fresh/server.ts";
 import Layout from "@/components/Layout.tsx";
+import EditPurchaseForm from "@/islands/EditPurchaseForm.tsx";
+import { UserWithIdType } from "@/interfaces/UserInterface.ts";
 
-export default function EditOne(props: PageProps) {
-  const { id } = props.params;
+export const handler: Handlers = {
+  GET(_req, ctx) {
+    const user = ctx.state.user as unknown as UserWithIdType;
+    return ctx.render({
+      user,
+    });
+  },
+};
+
+export default function EditOne(data: { data: { user: UserWithIdType } }) {
+  const id = (data as unknown as PageProps).params.id;
+  console.log(id);
   return (
     <Layout title="Roomoney 💰 - Edit Purchase">
-      <>
+      <div className="container-sm mt-4">
         <h1>Dashboard - 🛒 Edit Purchase</h1>
         <p>
-          {id}
+          Edit or delete your purchase here 😃.
         </p>
-      </>
+        <EditPurchaseForm id={id} user={data.data.user} />
+      </div>
     </Layout>
   );
 }

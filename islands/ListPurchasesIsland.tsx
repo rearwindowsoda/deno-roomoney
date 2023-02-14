@@ -181,7 +181,14 @@ function AddPurchaseForm(props: { data: ListHousePurchasesPropsInterface }) {
             {filteredData
               ? (
                 filteredData.slice(0, 50).map((el, index) => (
-                  <tr key={index} class="table-dark">
+                  <tr
+                    key={index}
+                    class="table-dark"
+                    onClick={() => {
+                      return window.location.href =
+                        `/dashboard/purchase/one/${el._id.toString()}`;
+                    }}
+                  >
                     <th>{el.purchaseDate.toString().slice(0, 10)}</th>
                     <td>{el.name}</td>
                     <td>{el.amount}</td>
