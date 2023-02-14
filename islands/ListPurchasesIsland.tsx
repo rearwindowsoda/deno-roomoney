@@ -1,11 +1,202 @@
+import { useEffect, useMemo, useState } from "preact/hooks";
 import GoBackAnchor from "@/components/Common/GoBackAnchor.tsx";
 import { ListHousePurchasesPropsInterface } from "@/routes/dashboard/purchase/list/index.tsx";
+import { PurchaseWithIdType } from "@/interfaces/PurchaseInterface.ts";
+import { UserWithIdType } from "@/interfaces/UserInterface.ts";
+import Alert from "@/components/Common/Alert.tsx";
+import LoadingSpinner from "@/components/Common/LoadingSpinner.tsx";
+
+interface DataInterface {
+  message?: string;
+  purchases?: PurchaseWithIdType[] | [];
+  status: number;
+}
 
 function AddPurchaseForm(props: { data: ListHousePurchasesPropsInterface }) {
-  //TODO: List all purchases /dashboard/purchase/list. Table with purchases and buttons (EDIT / DELETE - Edit will go to API [id] route / Delete: api route / delete).  Filter the purchases with select (USER 1 / USER 2). Remember localstorage caching. Limit purchases to 50. Calculate balance from all purchases. Loading spinnner (maybe lazy loading?)
+  const [purchases, setPurchases] = useState<DataInterface | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [filter, setFilter] = useState<string>("all");
+  const [message, setMessage] = useState<string>("");
+  const [users, setUsers] = useState<UserWithIdType[]>(
+    props.data.users as UserWithIdType[],
+  );
+
+  useEffect(() => {
+    if (users.length < 2) {
+      setMessage(
+        "You need minimum of two users in your household to list purchases.",
+      );
+    }
+  }, []);
+
+  useEffect(() => {
+    const localData = localStorage.getItem("purchases-list");
+    if (localData) {
+      setPurchases(JSON.parse(localData));
+    }
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const listPurchasesRequest = await fetch(
+          "/api/purchases/list-purchases",
+          { method: "POST" },
+        );
+        const listPurchasesResponse = await listPurchasesRequest.json();
+        if (listPurchasesResponse) {
+          localStorage.setItem(
+            "purchases-list",
+            JSON.stringify(listPurchasesResponse),
+          );
+          setPurchases(listPurchasesResponse);
+          if (purchases?.message) {
+            setMessage(purchases?.message);
+          }
+        }
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+        setLoading(false);
+        if (error.message) {
+          setMessage(error.message);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const amountUser1 = useMemo(() => {
+    if (purchases?.purchases && purchases?.purchases.length) {
+      return (purchases.purchases as PurchaseWithIdType[]).reduce(
+        (acc: number, item: PurchaseWithIdType) => {
+          if (item.paidBy === users[0]._id) {
+            acc += item.amount;
+          }
+          return acc;
+        },
+        0,
+      );
+    }
+    return 0;
+  }, [purchases]);
+
+  const amountUser2 = useMemo(() => {
+    if (purchases?.purchases && purchases?.purchases.length) {
+      return (purchases.purchases as PurchaseWithIdType[]).reduce(
+        (acc: number, item: PurchaseWithIdType) => {
+          if (item.paidBy === users[1]._id) {
+            acc += item.amount;
+          }
+          return acc;
+        },
+        0,
+      );
+    }
+    return 0;
+  }, [purchases]);
+
+  const balance = useMemo(() => amountUser1 - amountUser2, [
+    amountUser1,
+    amountUser2,
+  ]);
+
+  const filteredData = useMemo(() => {
+    if (filter === "user1") {
+      return purchases?.purchases!.filter((item) =>
+        item.paidBy === users[0]._id
+      );
+    } else if (filter === "user2") {
+      return purchases?.purchases!.filter((item) =>
+        item.paidBy === users[1]._id
+      );
+    }
+    return purchases?.purchases;
+  }, [purchases, filter]);
+
   return (
     <>
       <GoBackAnchor link="/dashboard/purchase" />
+      {message && (
+        <Alert class="alert mt-4 mb-4 alert-secondary" message={message} />
+      )}
+
+      <div>
+        {loading && (
+          <div class="my-4">
+            <LoadingSpinner />
+          </div>
+        )}
+        <button
+          class="btn btn-success mx-2 my-4"
+          onClick={() => setFilter("all")}
+        >
+          Show All Purchases
+        </button>
+        <button
+          class="btn btn-success mx-2 my-4"
+          onClick={() => setFilter("user1")}
+        >
+          Show {users[0].login} Purchases
+        </button>
+        <button
+          class="btn btn-secondary mx-2 my-4"
+          onClick={() => setFilter("user2")}
+        >
+          Show {users[1].login} Purchases
+        </button>
+      </div>
+
+      <div class="my-2">
+        {balance >= 0
+          ? (
+            <div>
+              <h3 class="text-alert">
+                {users[0].login} owes {users[1].login} ${balance}
+              </h3>
+            </div>
+          )
+          : (
+            <div>
+              <h3 class="text-alert">
+                {users[1].login} owes {users[0].login} ${Math.abs(balance)}
+              </h3>
+            </div>
+          )}
+      </div>
+      <div>
+        <table class="table table-hover table-responsive">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Name</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Paid By</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredData
+              ? (
+                filteredData.slice(0, 50).map((el, index) => (
+                  <tr key={index} class="table-dark">
+                    <th>{el.purchaseDate.toString().slice(0, 10)}</th>
+                    <td>{el.name}</td>
+                    <td>{el.amount}</td>
+                    <td>
+                      {users.find((user) => {
+                        return user._id === el.paidBy;
+                      })?.login}
+                    </td>
+                  </tr>
+                ))
+              )
+              : <p>No purchases in this household yet.</p>}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }

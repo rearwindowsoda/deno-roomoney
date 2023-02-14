@@ -143,3 +143,4 @@ For deployment / production check out [Deno Deploy](https://deno.com/deploy).
 - [x] Buttons should be a component.
   - Simple buttons are components.
 - [x] Alerts should be a component.
+- [ ] Divide code into separate components.

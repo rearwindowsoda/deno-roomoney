@@ -46,6 +46,25 @@ export default function DashboardPurchase() {
               </p>
             </div>
           </div>
+          <div class="card border-success mb-3" style="max-width: 20rem;">
+            <div class="card-header">Recieved transfer?</div>
+            <div class="card-body">
+              <h4 class="card-title">
+                If you currently recieved payment from other resident.
+              </h4>
+              <p class="card-text">
+                Use the button below to note that other user transferred you
+                money,
+              </p>
+              <p class="card-text">
+                <Anchor
+                  link="/dashboard/purchase/recieve"
+                  name="💰 Received payment"
+                  class="btn btn-success"
+                />
+              </p>
+            </div>
+          </div>
         </div>
       </>
     </Layout>
