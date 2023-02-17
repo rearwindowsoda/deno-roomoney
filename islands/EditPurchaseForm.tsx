@@ -173,18 +173,22 @@ function EditPurchaseForm(props: Props) {
                   </label>
                 </div>
               </fieldset>
-              <button
-                type="submit"
-                class="btn btn-primary"
-              >
-                Edit purchase 🛒
-              </button>
-              <button
-                onClick={deletePurchase}
-                class="btn btn-danger mx-4"
-              >
-                Delete purchase 🗑
-              </button>
+              <p>
+                <button
+                  type="submit"
+                  class="btn btn-primary mt-2"
+                >
+                  Edit purchase 🛒
+                </button>
+              </p>
+              <p>
+                <button
+                  onClick={deletePurchase}
+                  class="btn btn-danger mt-2"
+                >
+                  Delete purchase 🗑
+                </button>
+              </p>
             </form>
           )
           : null}

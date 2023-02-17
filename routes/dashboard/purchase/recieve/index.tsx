@@ -22,7 +22,10 @@ export const handler: Handlers = {
       });
     }
     const users = await User.find({ _id: { $in: foundHouse.users } });
-    const otherUser = users.filter((user) => user._id !== foundUser._id)[0];
+    const otherUser =
+      users.filter((user) =>
+        user._id.toString() != foundUser._id.toString()
+      )[0];
     return ctx.render({
       otherUser,
     });
