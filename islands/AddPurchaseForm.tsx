@@ -153,20 +153,25 @@ function AddPurchaseForm(props: { data: AddPurchaseHouseInterface }) {
               })}
           </div>
         </fieldset>
-        <button
-          type="submit"
-          class="btn btn-primary"
-          disabled={!!props.data.errorMessage}
-        >
-          Add purchase 🛒
-        </button>
-        <button
-          class="btn btn-outline-light mx-4"
-          disabled={!!props.data.errorMessage}
-          onClick={splitAmount}
-        >
-          Split amount ½
-        </button>
+        <p>
+          <button
+            type="submit"
+            class="btn btn-success mt-2"
+            disabled={!!props.data.errorMessage}
+          >
+            Add purchase 🛒
+          </button>
+        </p>
+        <p>
+          <button
+            class="btn btn-outline-light mt-2"
+            disabled={!!props.data.errorMessage}
+            onClick={splitAmount}
+          >
+            Split amount ½
+          </button>
+        </p>
+
         {message &&
           <Alert class="alert mt-4 alert-secondary" message={message} />}
       </form>

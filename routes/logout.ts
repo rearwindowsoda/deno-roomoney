@@ -11,7 +11,10 @@ export const handler: Handlers = {
       },
     });
     denoCookie.deleteCookie(response.headers, "auth", {
-      path: `${config.base_url}`,
+      path: config.environment === "production" ? `/` : config.base_url,
+      domain: config.environment === "production"
+        ? "." + `${config.base_url.split("https://")[1]}`
+        : "",
     });
     return response;
   },

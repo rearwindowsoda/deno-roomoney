@@ -5,7 +5,7 @@ import { PurchaseWithIdType } from "@/interfaces/PurchaseInterface.ts";
 import { UserWithIdType } from "@/interfaces/UserInterface.ts";
 import Alert from "@/components/Common/Alert.tsx";
 import LoadingSpinner from "@/components/Common/LoadingSpinner.tsx";
-
+import SingleCard from "@/components/Common/SingleCard.tsx";
 interface DataInterface {
   message?: string;
   purchases?: PurchaseWithIdType[] | [];
@@ -123,13 +123,7 @@ function AddPurchaseForm(props: { data: ListHousePurchasesPropsInterface }) {
       {message && (
         <Alert class="alert mt-4 mb-4 alert-secondary" message={message} />
       )}
-
       <div>
-        {loading && (
-          <div class="my-4">
-            <LoadingSpinner />
-          </div>
-        )}
         <button
           class="btn btn-success mx-2 my-4"
           onClick={() => setFilter("all")}
@@ -150,21 +144,32 @@ function AddPurchaseForm(props: { data: ListHousePurchasesPropsInterface }) {
         </button>
       </div>
 
-      <div class="my-2">
+      <div>
+        {loading && (
+          <div class="my-4">
+            <LoadingSpinner />
+          </div>
+        )}
+      </div>
+      <div class="d-flex justify-content-center mt-4 gap-4 p-4 flex-wrap">
         {balance >= 0
           ? (
-            <div>
-              <h3 class="text-alert">
-                {users[0].login} owes {users[1].login} ${balance}
-              </h3>
-            </div>
+            <SingleCard
+              class="card border-danger mb-3"
+              header="Balance"
+              title={`${users[1].login} owes ${users[0].login} ${balance}`}
+              text=""
+            />
           )
           : (
-            <div>
-              <h3 class="text-alert">
-                {users[1].login} owes {users[0].login} ${Math.abs(balance)}
-              </h3>
-            </div>
+            <SingleCard
+              class="card border-danger mb-3"
+              header="Balance"
+              title={`${users[0].login} owes ${users[1].login} ${
+                Math.abs(balance)
+              }`}
+              text=""
+            />
           )}
       </div>
       <div>
